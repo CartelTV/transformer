@@ -9,6 +9,10 @@
 
   &__content {
     color: $white;
+
+    @include mq($M) {
+      font-size: 1.5rem;
+    }
   }
 
   &__client {

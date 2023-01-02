@@ -11,6 +11,28 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-sitemap`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    `gatsby-plugin-image`,
+    {
+      resolve: 'gatsby-source-wordpress',
+      options: {
+        url: 'http://54.187.0.234/graphql/',
+        refetchInterval: 30,
+        schema: {
+          requestConcurrency: 10,
+          timeout: 90000,
+        },
+        type: {
+          MediaItem: {
+            localFile: {
+              requestConcurrency: 1,
+              maxFileSizeBytes: 100000000,
+            },
+          },
+        },
+      },
+    },
     {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
@@ -31,8 +53,6 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

@@ -7,6 +7,11 @@
   padding-bottom: $space-500;
   padding-top: $space-500;
 
+  @include mq($M) {
+    padding-bottom: $space-600;
+    padding-top: $space-600;
+  }
+
   > .container {
     align-items: center;
     display: flex;
@@ -17,6 +22,10 @@
   &__logo {
     margin-bottom: $space-400;
     width: 12rem;
+
+    @include mq($M) {
+      width: 15rem;
+    }
   }
 
   address {

@@ -1,137 +1,90 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import PropTypes from 'prop-types';
+import { graphql, Link } from 'gatsby';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import HomepageCard from '../components/patterns/homepageCard';
 
-const tempData = [
-  {
-    id: 1,
-    imgSrcSmall: 'https://picsum.photos/id/237/375/210',
-    imgSrcMedium: 'https://picsum.photos/id/237/750/420',
-    imgSrcLarge: 'https://picsum.photos/id/237/1500/840',
-    imgAlt: 'detailed description of the image',
-    imgWidth: 1500,
-    imgHeight: 840,
-    client: 'High Noon',
-    directorName: 'Editor Name',
-    projectName: 'hn1',
-  },
-  {
-    id: 2,
-    imgSrcSmall: 'https://picsum.photos/id/238/375/210',
-    imgSrcMedium: 'https://picsum.photos/id/238/750/420',
-    imgSrcLarge: 'https://picsum.photos/id/238/1500/840',
-    imgAlt: 'detailed description of the image',
-    imgWidth: 1500,
-    imgHeight: 840,
-    client: 'New Amsterdam',
-    directorName: 'Editor Name',
-    projectName: 'na1',
-  },
-  {
-    id: 3,
-    imgSrcSmall: 'https://picsum.photos/id/239/375/210',
-    imgSrcMedium: 'https://picsum.photos/id/239/750/420',
-    imgSrcLarge: 'https://picsum.photos/id/239/1500/840',
-    imgAlt: 'detailed description of the image',
-    imgWidth: 1500,
-    imgHeight: 840,
-    client: 'Snapchat',
-    directorName: 'Editor Name',
-    projectName: 'sc1',
-  },
-  {
-    id: 4,
-    imgSrcSmall: 'https://picsum.photos/id/240/375/210',
-    imgSrcMedium: 'https://picsum.photos/id/240/750/420',
-    imgSrcLarge: 'https://picsum.photos/id/240/1500/840',
-    imgAlt: 'detailed description of the image',
-    imgWidth: 1500,
-    imgHeight: 840,
-    client: 'Lyft',
-    directorName: 'Editor Name',
-    projectName: 'lyft1',
-  },
-  {
-    id: 5,
-    imgSrcSmall: 'https://picsum.photos/id/241/375/210',
-    imgSrcMedium: 'https://picsum.photos/id/241/750/420',
-    imgSrcLarge: 'https://picsum.photos/id/241/1500/840',
-    imgAlt: 'detailed description of the image',
-    imgWidth: 1500,
-    imgHeight: 840,
-    client: 'High Noon',
-    directorName: 'Editor Name',
-    projectName: 'hn2',
-  },
-  {
-    id: 6,
-    imgSrcSmall: 'https://picsum.photos/id/242/375/210',
-    imgSrcMedium: 'https://picsum.photos/id/242/750/420',
-    imgSrcLarge: 'https://picsum.photos/id/242/1500/840',
-    imgAlt: 'detailed description of the image',
-    imgWidth: 1500,
-    imgHeight: 840,
-    client: 'Rohl',
-    directorName: 'Editor Name',
-    projectName: 'rohl1',
-  },
-  {
-    id: 7,
-    imgSrcSmall: 'https://picsum.photos/id/243/375/210',
-    imgSrcMedium: 'https://picsum.photos/id/243/750/420',
-    imgSrcLarge: 'https://picsum.photos/id/243/1500/840',
-    imgAlt: 'detailed description of the image',
-    imgWidth: 1500,
-    imgHeight: 840,
-    client: 'Vista Print',
-    directorName: 'Editor Name',
-    projectName: 'vp1',
-  },
-  {
-    id: 8,
-    imgSrcSmall: 'https://picsum.photos/id/244/375/210',
-    imgSrcMedium: 'https://picsum.photos/id/244/750/420',
-    imgSrcLarge: 'https://picsum.photos/id/244/1500/840',
-    imgAlt: 'detailed description of the image',
-    imgWidth: 1500,
-    imgHeight: 840,
-    client: 'High Noon',
-    directorName: 'Editor Name',
-    projectName: 'hn3',
-  },
-];
+const IndexPage = ({ data }) => {
+  const homepageData = data.allWpPage.edges[0].node.homepage.homepageCards;
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    {tempData.map((project) => {
-      const pageLink = `${project.client
-        .toLowerCase()
-        .replace(' ', '-')}-${project.projectName
-        .toLowerCase()
-        .replace(' ', '-')}`;
+  return (
+    <Layout>
+      <SEO title="Home" />
+      {homepageData.map((project) => {
+        const pageLink = `${project.client
+          .toLowerCase()
+          .replaceAll(' ', '-')
+          .replaceAll('/', '-')}-${project.projectName
+          .toLowerCase()
+          .replaceAll(' ', '-')}`;
 
-      return (
-        <Link to={pageLink}>
-          <HomepageCard
-            key={project.id}
-            imgSrcSmall={project.imgSrcSmall}
-            imgSrcMedium={project.imgSrcMedium}
-            imgSrcLarge={project.imgSrcLarge}
-            imgAlt={project.imgAlt}
-            imgWidth={project.imgWidth}
-            imgHeight={project.imgHeight}
-            client={project.client}
-            directorName={project.directorName}
-            projectName={project.projectName}
-          />
-        </Link>
-      );
-    })}
-  </Layout>
-);
+        return (
+          <Link to={pageLink} key={pageLink}>
+            <HomepageCard
+              image={project.image}
+              client={project.client}
+              directorName={project.directorName}
+            />
+          </Link>
+        );
+      })}
+    </Layout>
+  );
+};
+
+IndexPage.propTypes = {
+  data: PropTypes.shape({
+    allWpPage: PropTypes.shape({
+      edges: PropTypes.arrayOf(
+        PropTypes.shape({
+          node: PropTypes.shape({
+            homepage: PropTypes.shape({
+              homepageCards: PropTypes.arrayOf(
+                PropTypes.shape({
+                  id: PropTypes.string,
+                  client: PropTypes.string,
+                  directorName: PropTypes.string,
+                  image: PropTypes.shape({}),
+                })
+              ),
+            }),
+          }),
+        })
+      ),
+    }),
+  }).isRequired,
+};
 
 export default IndexPage;
+
+export const query = graphql`
+  query {
+    allWpPage(filter: { databaseId: { eq: 10 } }) {
+      edges {
+        node {
+          homepage {
+            homepageCards {
+              client
+              directorName
+              projectName
+              image {
+                gatsbyImage(
+                  placeholder: BLURRED
+                  formats: [AUTO, WEBP, AVIF]
+                  cropFocus: CENTER
+                  fit: COVER
+                  breakpoints: [376, 751, 1920]
+                  layout: CONSTRAINED
+                  width: 1920
+                )
+                altText
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
