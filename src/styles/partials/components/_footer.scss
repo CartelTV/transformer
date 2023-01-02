@@ -1,3 +1,31 @@
 // ===========================================================================
 // ==== FOOTER
 // ===========================================================================
+
+.footer {
+  background-color: $color-grey-1;
+  padding-bottom: $space-500;
+  padding-top: $space-500;
+
+  > .container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__logo {
+    margin-bottom: $space-400;
+    width: 12rem;
+  }
+
+  address {
+    color: $white;
+    text-align: center;
+
+    a {
+      border-bottom: 1px solid $white;
+      color: $white;
+    }
+  }
+}

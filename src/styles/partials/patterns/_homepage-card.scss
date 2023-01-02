@@ -1,0 +1,17 @@
+.homepage-card {
+  position: relative;
+
+  &__content-wrapper {
+    bottom: $space-300;
+    left: $space-300;
+    position: absolute;
+  }
+
+  &__content {
+    color: $white;
+  }
+
+  &__client {
+    text-transform: uppercase;
+  }
+}

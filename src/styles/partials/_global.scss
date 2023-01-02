@@ -3,7 +3,7 @@
 // ===========================================================================
 body {
   background: $bg-clr;
-  font-family: $font-med;
+  font-family: $font-reg;
   width: 100%;
 }
 
@@ -35,7 +35,7 @@ footer {
   }
 
   a {
-    border-bottom: 1px dashed $link-clr;
+    border-bottom: 1px solid $link-clr;
     color: $link-clr;
     padding-bottom: 2px;
     text-decoration: none;

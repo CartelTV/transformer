@@ -4,11 +4,26 @@
 
 /* Add the font files to this same directory */
 
-/* @font-face {
-  font-family: 'MyWebFont';
+@font-face {
+  font-family: 'TypewriterCondensed-Bold';
+  font-style: normal;
+  font-weight: 700;
+  src: url('typewcond_bold.woff2') format('woff2'),
+    url('typewcond_bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'TypewriterCondensed-DemiBold';
+  font-style: normal;
+  font-weight: 600;
+  src: url('typewcond_demi.woff2') format('woff2'),
+    url('typewcond_demi.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'TypewriterCondensed-Regular';
   font-style: normal;
   font-weight: 400;
-  src: url('webfont.woff2') format('woff2'),
-       url('webfont.woff') format('woff'),
-  }
-*/
+  src: url('typewcond_regular.woff2') format('woff2'),
+    url('typewcond_regular.woff') format('woff');
+}

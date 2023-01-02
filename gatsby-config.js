@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `ROOT SITE TITLE`,
+    title: `Transformer`,
     description: `SITE META DESCRIPTION GOES HERE.`,
     siteUrl: `https://mikeriley.dev`,
     socialImage: `ABSOLUTE PATH TO IMAGE IN STATIC FOLDER`,
@@ -14,13 +14,14 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
-        google: {
-          families: ['Open Sans:400,700'],
+        custom: {
+          families: [
+            'TypewriterCondensed-Bold',
+            'TypewriterCondensed-DemiBold',
+            'TypewriterCondensed-Regular',
+          ],
+          urls: ['/fonts/fonts.css'],
         },
-        // custom: {
-        //   families: ['CUSTOMFONT1, CUSTOMFONT2'],
-        //   urls: ['/fonts/fonts.css'],
-        // },
       },
     },
     {
