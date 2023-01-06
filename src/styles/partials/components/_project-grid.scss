@@ -1,0 +1,39 @@
+.project-grid {
+  display: grid;
+  gap: $space-400;
+
+  @include mq($M) {
+    grid-template-columns: repeat(2, 1fr);
+
+    &__item {
+      max-width: none;
+
+      // 1/7 - 2 cols wide and 1 row tall
+      &:nth-of-type(7n + 1) {
+        grid-column: span 2;
+      }
+
+      // 2/7 - 2 cols wide and 1 row tall
+      &:nth-of-type(7n + 2) {
+        grid-column: span 2;
+      }
+
+      // 5/7 - 1 col wide and 2 rows tall
+      &:nth-of-type(7n + 5) {
+        grid-row: span 2;
+
+        .homepage-card {
+          height: 100%;
+
+          .homepage-card__image {
+            position: static;
+
+            > div {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}

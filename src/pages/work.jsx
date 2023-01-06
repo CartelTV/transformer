@@ -14,26 +14,30 @@ const WorkPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Work" />
-      {workData.map((item) => {
-        const pageLink = `${item.project.client
-          .toLowerCase()
-          .replaceAll(' ', '-')
-          .replaceAll('/', '-')
-          .replaceAll(':', '')}-${item.project.projectName
-          .toLowerCase()
-          .replaceAll(' ', '-')
-          .replaceAll(':', '')}`;
+      <ul className="project-grid">
+        {workData.map((item) => {
+          const pageLink = `${item.project.client
+            .toLowerCase()
+            .replaceAll(' ', '-')
+            .replaceAll('/', '-')
+            .replaceAll(':', '')}-${item.project.projectName
+            .toLowerCase()
+            .replaceAll(' ', '-')
+            .replaceAll(':', '')}`;
 
-        return (
-          <Link to={pageLink} key={pageLink}>
-            <HomepageCard
-              image={item.project.image}
-              client={item.project.client}
-              director={item.project.director}
-            />
-          </Link>
-        );
-      })}
+          return (
+            <li className="project-grid__item" key={pageLink}>
+              <Link to={pageLink}>
+                <HomepageCard
+                  image={item.project.image}
+                  client={item.project.client}
+                  director={item.project.director}
+                />
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
     </Layout>
   );
 };
@@ -70,7 +74,7 @@ export const query = graphql`
             gatsbyImage(
               breakpoints: [376, 751, 1920]
               cropFocus: CENTER
-              fit: COVER
+              fit: FILL
               formats: [AUTO, WEBP, AVIF]
               layout: FULL_WIDTH
               placeholder: BLURRED

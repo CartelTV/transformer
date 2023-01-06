@@ -2,9 +2,13 @@
   position: relative;
 
   &__content-wrapper {
-    bottom: $space-300;
+    bottom: $space-200;
     left: $space-300;
     position: absolute;
+
+    @include mq($L) {
+      bottom: $space-300;
+    }
   }
 
   &__content {

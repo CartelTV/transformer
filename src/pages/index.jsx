@@ -14,26 +14,30 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Home" />
-      {homepageData.map((item) => {
-        const pageLink = `${item.project.client
-          .toLowerCase()
-          .replaceAll(' ', '-')
-          .replaceAll('/', '-')
-          .replaceAll(':', '')}-${item.project.projectName
-          .toLowerCase()
-          .replaceAll(' ', '-')
-          .replaceAll(':', '')}`;
+      <ul className="project-grid">
+        {homepageData.map((item) => {
+          const pageLink = `${item.project.client
+            .toLowerCase()
+            .replaceAll(' ', '-')
+            .replaceAll('/', '-')
+            .replaceAll(':', '')}-${item.project.projectName
+            .toLowerCase()
+            .replaceAll(' ', '-')
+            .replaceAll(':', '')}`;
 
-        return (
-          <Link to={pageLink} key={pageLink}>
-            <HomepageCard
-              image={item.project.image}
-              client={item.project.client}
-              director={item.project.director}
-            />
-          </Link>
-        );
-      })}
+          return (
+            <li className="project-grid__item" key={pageLink}>
+              <Link to={pageLink}>
+                <HomepageCard
+                  image={item.project.image}
+                  client={item.project.client}
+                  director={item.project.director}
+                />
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
     </Layout>
   );
 };
