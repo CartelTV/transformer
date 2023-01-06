@@ -1,0 +1,104 @@
+.work-detail {
+  padding-bottom: $space-700;
+  padding-top: $space-850;
+
+  > .container {
+    @include mq($M) {
+      display: flex;
+      flex-direction: row;
+
+      @supports (display: grid) {
+        display: grid;
+        grid-template-columns: calc(67% - 0.75rem) calc(33% - 0.75rem);
+      }
+    }
+  }
+
+  &__video {
+    background-color: $black;
+    margin-bottom: $space-400;
+    position: relative;
+
+    @include mq($M) {
+      flex-basis: 65.55%;
+      margin-bottom: 0;
+    }
+
+    iframe {
+      &:focus {
+        border: 1px solid $blue;
+      }
+    }
+  }
+
+  &__thumbnail-button {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    transition: opacity 1s ease-out;
+
+    &:focus {
+      outline: 5px solid $blue;
+    }
+
+    &::after {
+      content: url('/icon-play.svg');
+      position: absolute;
+      width: 24px;
+    }
+
+    &.is-playing {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+
+  &__video-wrapper {
+    animation: fadeIn 2s ease-out;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  &__text {
+    @include mq($M) {
+      align-items: flex-start;
+      flex-basis: 34.45%;
+      flex-direction: column;
+      justify-content: center;
+      padding-left: 1.9rem;
+      padding-right: 0;
+      position: relative;
+    }
+  }
+
+  &__project {
+    margin-bottom: $space-500;
+  }
+
+  &__client {
+    font-size: 2.25rem;
+    margin-bottom: $space-200;
+
+    &::after {
+      border: 0;
+    }
+  }
+
+  &__title {
+    font-size: 1.75rem;
+    letter-spacing: 1px;
+  }
+
+  &__meta {
+    font-size: 1.25rem;
+
+    &-item {
+      &:not(:last-child) {
+        margin-bottom: $space-100;
+      }
+    }
+  }
+}

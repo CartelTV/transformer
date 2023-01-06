@@ -1,0 +1,38 @@
+.info {
+  font-size: 1.5rem;
+  padding-bottom: $space-700;
+  padding-top: $space-850;
+
+  > .container {
+    @include mq($M) {
+      align-items: center;
+      display: flex;
+    }
+  }
+
+  &__col {
+    &:first-child {
+      margin-bottom: $space-500;
+
+      @include mq($M) {
+        margin-bottom: 0;
+      }
+    }
+
+    @include mq($M) {
+      flex-basis: 50%;
+
+      &:first-child {
+        margin-right: $space-600;
+      }
+    }
+  }
+
+  #map {
+    aspect-ratio: 555/312;
+  }
+
+  address {
+    margin-bottom: $space-500;
+  }
+}

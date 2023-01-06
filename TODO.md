@@ -1,4 +1,4 @@
-- set up development environment
+- √ set up development environment
   - update packages
   - delete cache and git folders
   - create git repo
@@ -9,33 +9,32 @@
   - add custom fonts
   - complete gatsby-config file
   - restart environment
-- update variables.scss file
-- add logo as SVG asset
-- header component
-- footer component
-- homepage
-- interior pages(s)
-- add site content
+- √ update variables.scss file
+- √ add logo as SVG asset
+- √ header component
+- √ footer component
+- √ homepage
+- √ interior pages(s)
+- √ add site content
   - static and/or via WordPress API
 - push to Pyrographic Netlify account for dev URL
 - [WordPress] create a WP instance on client's host
   - SSL required
-- [WordPress] add plugins
+- √ [WordPress] add plugins
   - Advanced Custom Fields PRO
   - All-in-One WP Migration
   - All-in-One WP Migration Unlimited Extension
   - Classic Editor
   - Custom Post Type UI
   - Deploy with NetlifyPress
-  - Duplicate Page
   - UpdraftPlus - Backup/Restore
   - WP Gatsby
   - WP GraphQL
   - WPGraphQL for Advanced Custom Fields
-- [WordPress] add custom fields
-- [WordPress] add content
-- create interior page template(s) used in gatsby-node
-- get content from WP API
+- √ [WordPress] add custom fields
+- √ [WordPress] add content
+- √ create interior page template(s) used in gatsby-node
+- √ get content from WP API
 - add schema.org metadata
 - custom 404 page or redirect to homepage
 - create sitemap
