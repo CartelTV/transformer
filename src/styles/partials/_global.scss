@@ -7,6 +7,11 @@ body {
   width: 100%;
 }
 
+strong,
+b {
+  font-family: $font-bold;
+}
+
 main,
 footer {
   p,
@@ -35,10 +40,9 @@ footer {
   }
 
   a {
-    border-bottom: 1px solid $link-clr;
     color: $link-clr;
     padding-bottom: 2px;
-    text-decoration: none;
+    text-underline-offset: $space-200;
 
     &:hover,
     &:active {

@@ -35,11 +35,13 @@ html {
 
 ::-moz-selection {
   background: $selection;
+  color: $black;
   text-shadow: none;
 }
 
 ::selection {
   background: $selection;
+  color: $black;
   text-shadow: none;
 }
 
@@ -137,8 +139,13 @@ li {
   max-width: 40rem;
 }
 
+address {
+  font-style: normal;
+}
+
 h1,
 .h1 {
+  font-family: $font-bold;
   font-size: 2.5rem;
   line-height: 1.25;
 
@@ -155,6 +162,7 @@ h1,
 
 h2,
 .h2 {
+  font-family: $font-bold;
   font-size: 1.5rem;
   line-height: 1.15384615;
 
@@ -171,6 +179,7 @@ h2,
 
 h3,
 .h3 {
+  font-family: $font-bold;
   font-size: 1.125rem;
   line-height: 1.13636364;
 
