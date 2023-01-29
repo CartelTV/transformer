@@ -30,7 +30,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   allWpProject.nodes.forEach((page) => {
     createPage({
       // will be the url for the page
-      path: page.slug,
+      path: `work/${page.slug}`,
       // specify the component template of your choice
       component: slash(workDetailTemplate),
       // In the ^template's GraphQL query, 'id' will be available

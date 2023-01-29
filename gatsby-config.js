@@ -1,10 +1,9 @@
 module.exports = {
   siteMetadata: {
     title: `Transformer`,
-    description: `SITE META DESCRIPTION GOES HERE.`,
+    description: `Transformer is a high-end visual effects boutique that is based in Santa Monica, CA.`,
     siteUrl: `https://mikeriley.dev`,
-    socialImage: `ABSOLUTE PATH TO IMAGE IN STATIC FOLDER`,
-    author: `TWITTER HANDLE`,
+    socialImage: `/social-image.jpg`,
   },
   plugins: [
     `gatsby-plugin-remove-trailing-slashes`,
@@ -56,13 +55,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `ROOT SITE TITLE`,
-        short_name: `SHORT VERSION OF ROOT SITE TITLE`,
+        name: `Transformer`,
+        short_name: `Transformer`,
         start_url: `/`,
-        background_color: `HEX VALUE`,
-        theme_color: `HEX VALUE`,
+        background_color: `#111111`,
+        theme_color: `#ffffff`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/favicon.png`, // This path is relative to the root of the site.
       },
     },
     {
@@ -72,15 +71,5 @@ module.exports = {
         errorClassName: false,
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-google-tagmanager`,
-    //   options: {
-    //     id: 'GTM-ID-STRING',
-    //     includeInDevelopment: true
-    //   }
-    // }
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.app/offline
-    // 'gatsby-plugin-offline',
   ],
 };

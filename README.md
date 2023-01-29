@@ -1,6 +1,6 @@
-# Gatsby Starter
+# Transformer Website
 
-A boilerplate for static sites built with Gatsby.\
+Built with [Pyrographic Design's boilerplate](https://github.com/mikeriley131/gatsby-starter) for static sites.\
 Built on [Gatsby.js](https://www.gatsbyjs.org/), a static site generator built with React.js.
 
 - production environment - PROD URL GOES HERE

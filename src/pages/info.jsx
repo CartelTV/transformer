@@ -28,8 +28,8 @@ const InfoPage = ({ data: { allWpPage } }) => {
         const map = new window.google.maps.Map(document.getElementById('map'), {
           disableDefaultUI: true,
           center: {
-            lat: 34.03314675929526,
-            lng: -118.46453928460603,
+            lat: 34.03125,
+            lng: -118.46401,
           },
           zoom: 14,
           styles: [
@@ -104,7 +104,7 @@ const InfoPage = ({ data: { allWpPage } }) => {
         });
 
         new window.google.maps.Marker({
-          position: { lat: 34.03314675929526, lng: -118.46453928460603 },
+          position: { lat: 34.03125, lng: -118.46401 },
           icon: iconMapMarker,
           map,
         });
@@ -117,7 +117,7 @@ const InfoPage = ({ data: { allWpPage } }) => {
         <script
           async
           defer
-          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCSQ-2TUSm0yqVfuotzZB44vTTHDQkeUNA&callback=initMap"
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAt8P10q1vokG0xnBf5O5pZEKp3ctyWFDw&callback=initMap"
         />
       </Helmet>
       <Layout>

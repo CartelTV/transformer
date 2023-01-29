@@ -16,14 +16,23 @@ const IndexPage = ({ data }) => {
       <SEO title="Home" />
       <ul className="project-grid">
         {homepageData.map((item) => {
-          const pageLink = `${item.project.client
+          const pageLink = `work/${item.project.client
             .toLowerCase()
             .replaceAll(' ', '-')
             .replaceAll('/', '-')
+            .replaceAll('’', '')
+            .replaceAll("'", '')
+            .replaceAll('‘', '')
+            .replaceAll('*', '')
             .replaceAll(':', '')}-${item.project.projectName
             .toLowerCase()
             .replaceAll(' ', '-')
-            .replaceAll(':', '')}`;
+            .replaceAll(':', '')
+            .replaceAll('*', '')
+            .replaceAll('.', '')
+            .replaceAll('’', '')
+            .replaceAll("'", '')
+            .replaceAll('‘', '')}`;
 
           return (
             <li className="project-grid__item" key={pageLink}>

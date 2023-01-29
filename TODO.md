@@ -35,22 +35,20 @@
 - √ [WordPress] add content
 - √ create interior page template(s) used in gatsby-node
 - √ get content from WP API
-- add schema.org metadata
-- custom 404 page or redirect to homepage
+- √ custom 404 page or redirect to homepage
 - create sitemap
   - gatsby-plugin-sitemap
 - cross-browser testing
 - Lighthouse audits
   - accessibility
   - performance
-- manual accessibility audits
+- √ manual accessibility audits
   - interactive elements navigable via keyboard?
     - hidden menus?
 - overall audit
-- https://sonarwhal.com/scanner
-- google analytics scripts added
-- remove unused boilerplate files and assets (images, icons, fonts, etc.)
-- update gatsby-config file for launch
+  - https://sonarwhal.com/scanner
+- √ remove unused boilerplate files and assets (images, icons, fonts, etc.)
+- √ update gatsby-config file for launch
   - favicon
   - create Open Graph/Twitter Card image (1200px x 1200px)
   - connect to any social media sites

@@ -20,10 +20,19 @@ const WorkPage = ({ data }) => {
             .toLowerCase()
             .replaceAll(' ', '-')
             .replaceAll('/', '-')
+            .replaceAll('’', '')
+            .replaceAll("'", '')
+            .replaceAll('‘', '')
+            .replaceAll('*', '')
             .replaceAll(':', '')}-${item.project.projectName
             .toLowerCase()
             .replaceAll(' ', '-')
-            .replaceAll(':', '')}`;
+            .replaceAll(':', '')
+            .replaceAll('*', '')
+            .replaceAll('.', '')
+            .replaceAll('’', '')
+            .replaceAll("'", '')
+            .replaceAll('‘', '')}`;
 
           return (
             <li className="project-grid__item" key={pageLink}>

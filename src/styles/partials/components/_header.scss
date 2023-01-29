@@ -24,6 +24,17 @@
     padding-top: $space-400;
   }
 
+  a:has(.header__logo) {
+    align-self: flex-start;
+    outline: none;
+
+    &:focus,
+    &:hover {
+      border-bottom: 1px solid $white;
+      padding-bottom: $space-200;
+    }
+  }
+
   &__logo {
     max-width: 15rem;
     width: 25vw;
@@ -37,10 +48,16 @@
 
     &__link {
       color: $white;
+      outline: none;
       text-decoration: none;
 
       @include mq($M) {
         font-size: 1.5rem;
+      }
+
+      &:focus,
+      &:hover {
+        text-decoration: underline;
       }
     }
   }
