@@ -1,7 +1,4 @@
 .work-detail {
-  padding-bottom: $space-700;
-  padding-top: $space-850;
-
   > .container {
     @include mq($M) {
       display: flex;

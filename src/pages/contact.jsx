@@ -4,12 +4,12 @@ import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 
-import Layout from '../components/layout';
+import Layout from '../components/pageLayout';
 import SEO from '../components/seo';
 
 import iconMapMarker from '../images/map-pin.png';
 
-const InfoPage = ({ data: { allWpPage } }) => {
+const ContactPage = ({ data: { allWpPage } }) => {
   const {
     infoPage: {
       businessAddressLine1,
@@ -185,7 +185,7 @@ export const query = graphql`
   }
 `;
 
-InfoPage.propTypes = {
+ContactPage.propTypes = {
   data: PropTypes.shape({
     allWpPage: PropTypes.shape({
       edges: PropTypes.arrayOf(
@@ -207,6 +207,6 @@ InfoPage.propTypes = {
   }).isRequired,
 };
 
-InfoPage.defaultProps = {};
+ContactPage.defaultProps = {};
 
-export default InfoPage;
+export default ContactPage;

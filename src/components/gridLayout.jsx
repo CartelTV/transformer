@@ -11,10 +11,12 @@ const Layout = ({ children }) => (
     <a className="skip-link" href="#main">
       skip to main content
     </a>
-    <Header />
-    <main className="main" id="main" role="main">
-      {children}
-    </main>
+    <div className="content-wrapper__grid">
+      <Header />
+      <main className="main" id="main" role="main">
+        {children}
+      </main>
+    </div>
     <Footer />
   </Fragment>
 );

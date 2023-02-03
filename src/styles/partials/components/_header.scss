@@ -13,9 +13,6 @@
   padding-left: $space-300;
   padding-right: $space-300;
   padding-top: $space-200;
-  position: fixed;
-  width: 100%;
-  z-index: 1;
 
   @include mq($M) {
     height: 6rem;
@@ -27,11 +24,10 @@
   a:has(.header__logo) {
     align-self: flex-start;
     outline: none;
+    padding-bottom: $space-200;
 
-    &:focus,
-    &:hover {
+    &:focus {
       border-bottom: 1px solid $white;
-      padding-bottom: $space-200;
     }
   }
 
@@ -43,7 +39,7 @@
   .nav {
     &__list {
       display: flex;
-      gap: $space-400;
+      gap: $space-500;
     }
 
     &__link {
