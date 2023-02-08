@@ -6,7 +6,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import Layout from '../components/pageLayout';
 import SEO from '../components/seo';
 
-const WorkDetailPage = ({ data }) => {
+const WorkDetailPage = ({ data, location }) => {
   const [videoIsPlaying, setVideoIsPlaying] = useState(false);
 
   const { allWpProject } = data;
@@ -25,7 +25,7 @@ const WorkDetailPage = ({ data }) => {
   const thumbnail = getImage(image);
 
   return (
-    <Layout>
+    <Layout location={location}>
       <SEO title={`${client} - ${projectName}`} />
       <article className="work-detail">
         <div className="container">
@@ -152,6 +152,11 @@ WorkDetailPage.propTypes = {
       ),
     }),
   }).isRequired,
+  location: PropTypes.shape({}),
+};
+
+WorkDetailPage.defaultProps = {
+  location: {},
 };
 
 export default WorkDetailPage;

@@ -2,23 +2,53 @@
 // ==== HEADER
 // ===========================================================================
 .header {
-  background: linear-gradient(
-    180deg,
-    rgba($color-grey-1, 0.75) 0%,
-    rgba($black, 0) 100%
-  );
+  align-items: center;
+  border-bottom: 3px solid $color-grey-1;
   display: flex;
-  height: 3rem;
+  flex-direction: column;
+  gap: $space-300;
   justify-content: space-between;
-  padding-left: $space-300;
-  padding-right: $space-300;
+  margin-bottom: $space-500;
+  padding-bottom: $space-500;
   padding-top: $space-200;
+  transition: margin-top 0.33s ease-out;
 
   @include mq($M) {
-    height: 6rem;
-    padding-left: $space-500;
-    padding-right: $space-500;
-    padding-top: $space-400;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: $space-500;
+  }
+
+  @include mq($XXL) {
+    width: 75%;
+  }
+
+  &.is-open {
+    margin-top: 306px;
+  }
+
+  &__menu-button {
+    align-items: center;
+    color: $color-grey-1;
+    display: flex;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    outline: none;
+    padding-bottom: $space-300;
+    padding-top: $space-300;
+    text-transform: uppercase;
+    transition: color 0.2s ease-out;
+
+    &:focus {
+      text-decoration: underline;
+    }
+
+    @include mq($M) {
+      display: none;
+    }
   }
 
   a:has(.header__logo) {
@@ -27,34 +57,85 @@
     padding-bottom: $space-200;
 
     &:focus {
-      border-bottom: 1px solid $white;
+      border-bottom: 1px solid $color-grey-1;
+    }
+  }
+
+  &__logo-wrapper {
+    border-top: 3px solid $color-grey-1;
+    display: flex;
+    justify-content: center;
+    padding-top: $space-500;
+    width: 100%;
+
+    @include mq($M) {
+      border-top: 0;
+      padding-top: 0;
     }
   }
 
   &__logo {
     max-width: 15rem;
-    width: 25vw;
+    width: 100%;
   }
+}
 
-  .nav {
-    &__list {
-      display: flex;
-      gap: $space-500;
+.nav {
+  &--small {
+    max-height: 0;
+    opacity: 0;
+    padding-bottom: $space-300;
+    position: absolute;
+    top: $space-300;
+    transition: max-height 0.33s ease-out 0.33s, opacity 0.33s ease-out;
+    width: calc(100% - 3rem);
+    z-index: -1;
+
+    @include mq($M) {
+      display: none;
     }
 
-    &__link {
-      color: $white;
-      outline: none;
-      text-decoration: none;
+    &.is-open {
+      border-bottom: 3px solid $color-grey-1;
+      max-height: 306px;
+      opacity: 1;
+    }
+  }
 
-      @include mq($M) {
-        font-size: 1.5rem;
-      }
+  &--large {
+    display: none;
 
-      &:focus,
-      &:hover {
-        text-decoration: underline;
-      }
+    @include mq($M) {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  &__list {
+    align-items: center;
+    flex-direction: column;
+    gap: $space-300;
+
+    @include mq($M) {
+      flex-direction: row;
+      gap: $space-500;
+      justify-content: space-between;
+    }
+  }
+
+  &__link {
+    color: $color-grey-1;
+    font-size: 1.5rem;
+    outline: none;
+    text-decoration: none;
+
+    @include mq($M) {
+      font-size: 1.25rem;
+    }
+
+    &:focus,
+    &:hover {
+      text-decoration: underline;
     }
   }
 }

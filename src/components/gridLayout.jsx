@@ -6,13 +6,13 @@ import '../styles/main.scss';
 import Header from './header';
 import Footer from './footer';
 
-const Layout = ({ children }) => (
+const Layout = ({ children, location }) => (
   <Fragment>
     <a className="skip-link" href="#main">
       skip to main content
     </a>
     <div className="content-wrapper__grid">
-      <Header />
+      <Header location={location} />
       <main className="main" id="main" role="main">
         {children}
       </main>
@@ -23,6 +23,11 @@ const Layout = ({ children }) => (
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  location: PropTypes.shape({}),
+};
+
+Layout.defaultProps = {
+  location: {},
 };
 
 export default Layout;

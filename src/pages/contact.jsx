@@ -9,7 +9,7 @@ import SEO from '../components/seo';
 
 import iconMapMarker from '../images/map-pin.png';
 
-const ContactPage = ({ data: { allWpPage } }) => {
+const ContactPage = ({ data: { allWpPage }, location }) => {
   const {
     infoPage: {
       businessAddressLine1,
@@ -113,7 +113,7 @@ const ContactPage = ({ data: { allWpPage } }) => {
   }, []);
   return (
     <Fragment>
-      <Helmet>
+      <Helmet location={location}>
         <script
           async
           defer
@@ -205,8 +205,11 @@ ContactPage.propTypes = {
       ),
     }),
   }).isRequired,
+  location: PropTypes.shape({}),
 };
 
-ContactPage.defaultProps = {};
+ContactPage.defaultProps = {
+  location: {},
+};
 
 export default ContactPage;

@@ -6,13 +6,13 @@ import Layout from '../components/gridLayout';
 import SEO from '../components/seo';
 import HomepageCard from '../components/patterns/homepageCard';
 
-const IndexPage = ({ data }) => {
+const IndexPage = ({ data, location }) => {
   const homepageData = data.allWpProject.nodes
     .filter((item) => item?.project?.showOnHomepage)
     .reverse();
 
   return (
-    <Layout>
+    <Layout location={location}>
       <SEO title="Home" />
       <ul className="project-grid">
         {homepageData.map((item) => {
@@ -66,6 +66,11 @@ IndexPage.propTypes = {
       ),
     }),
   }).isRequired,
+  location: PropTypes.shape({}),
+};
+
+IndexPage.defaultProps = {
+  location: {},
 };
 
 export default IndexPage;

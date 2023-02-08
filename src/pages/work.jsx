@@ -6,13 +6,13 @@ import Layout from '../components/gridLayout';
 import SEO from '../components/seo';
 import HomepageCard from '../components/patterns/homepageCard';
 
-const WorkPage = ({ data }) => {
+const WorkPage = ({ data, location }) => {
   const workData = data.allWpProject.nodes
     .filter((item) => !item?.project?.showOnHomepage)
     .reverse();
 
   return (
-    <Layout>
+    <Layout location={location}>
       <SEO title="Work" />
       <ul className="project-grid">
         {workData.map((item) => {
@@ -66,6 +66,11 @@ WorkPage.propTypes = {
       ),
     }),
   }).isRequired,
+  location: PropTypes.shape({}),
+};
+
+WorkPage.defaultProps = {
+  location: {},
 };
 
 export default WorkPage;

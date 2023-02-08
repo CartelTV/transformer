@@ -158,6 +158,8 @@ td {
     );
     height: 100vh;
     overflow-y: auto;
+    padding-left: $space-500;
+    padding-right: $space-500;
   }
 
   &__page {
