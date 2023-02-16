@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
-import transformerLogo from '../images/transformer-logo.svg';
+import transformerLogo from '../images/transformer-logo-light.svg';
 
 const Footer = () => (
   <footer className="footer" role="contentinfo">

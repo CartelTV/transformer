@@ -12,6 +12,7 @@
   padding-bottom: $space-500;
   padding-top: $space-200;
   transition: margin-top 0.33s ease-out;
+  width: 100%;
 
   @include mq($M) {
     margin-left: auto;
@@ -78,6 +79,28 @@
     max-width: 15rem;
     width: 100%;
   }
+
+  &--light {
+    border-bottom: 3px solid $color-grey-9;
+
+    .header__menu-button {
+      color: $color-grey-9;
+    }
+
+    a:has(.header__logo) {
+      &:focus {
+        border-bottom: 1px solid $color-grey-9;
+      }
+    }
+
+    .header__logo-wrapper {
+      border-top: 3px solid $color-grey-9;
+
+      @include mq($M) {
+        border-top: 0;
+      }
+    }
+  }
 }
 
 .nav {
@@ -89,7 +112,6 @@
     top: $space-300;
     transition: max-height 0.33s ease-out 0.33s, opacity 0.33s ease-out;
     width: calc(100% - 3rem);
-    z-index: -1;
 
     @include mq($M) {
       display: none;
@@ -136,6 +158,15 @@
     &:focus,
     &:hover {
       text-decoration: underline;
+    }
+  }
+
+  &--light {
+    &.is-open {
+      border-bottom: 3px solid $color-grey-9;
+    }
+    .nav__link {
+      color: $color-grey-9;
     }
   }
 }

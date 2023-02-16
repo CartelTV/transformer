@@ -1,0 +1,16 @@
+.three-col-grid {
+  display: grid;
+  gap: $space-500;
+  margin-bottom: 1.125rem !important;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: $space-800;
+
+  &__item {
+    max-width: none;
+  }
+
+  @include mq($M) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

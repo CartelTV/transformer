@@ -144,7 +144,6 @@ td {
 
   @include mq($L) {
     max-width: ($container-width * 1.5);
-    padding: 0;
   }
 }
 
@@ -168,5 +167,8 @@ td {
     flex-direction: column;
     height: 100vh;
     justify-content: space-between;
+    overflow-y: auto;
+    padding-left: $space-500;
+    padding-right: $space-500;
   }
 }

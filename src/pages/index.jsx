@@ -4,7 +4,7 @@ import { graphql, Link } from 'gatsby';
 
 import Layout from '../components/gridLayout';
 import SEO from '../components/seo';
-import HomepageCard from '../components/patterns/homepageCard';
+import VideoCard from '../components/patterns/videoCard';
 
 const IndexPage = ({ data, location }) => {
   const homepageData = data.allWpProject.nodes
@@ -16,7 +16,7 @@ const IndexPage = ({ data, location }) => {
       <SEO title="Home" />
       <ul className="project-grid">
         {homepageData.map((item) => {
-          const pageLink = `work/${item.project.client
+          const pageLink = `/work/${item.project.client
             .toLowerCase()
             .replaceAll(' ', '-')
             .replaceAll('/', '-')
@@ -37,10 +37,11 @@ const IndexPage = ({ data, location }) => {
           return (
             <li className="project-grid__item" key={pageLink}>
               <Link to={pageLink}>
-                <HomepageCard
-                  image={item.project.image}
+                <VideoCard
+                  staticImage={item.project.staticImage}
+                  activeImage={item.project.image}
                   client={item.project.client}
-                  director={item.project.director}
+                  projectName={item.project.projectName}
                 />
               </Link>
             </li>
@@ -84,6 +85,18 @@ export const query = graphql`
           director
           projectName
           showOnHomepage
+          staticImage {
+            gatsbyImage(
+              breakpoints: [376, 751, 1920]
+              cropFocus: CENTER
+              fit: COVER
+              formats: [AUTO, WEBP, AVIF]
+              layout: FULL_WIDTH
+              placeholder: BLURRED
+              width: 1920
+            )
+            altText
+          }
           image {
             gatsbyImage(
               breakpoints: [376, 751, 1920]

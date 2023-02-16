@@ -4,10 +4,11 @@
 @import 'partials/boilerplate';
 @import 'partials/global';
 @import 'partials/helpers';
-@import 'partials/patterns/homepage-card';
+@import 'partials/patterns/video-card';
 @import 'partials/components/header';
 @import 'partials/components/footer';
 @import 'partials/components/project-grid';
+@import 'partials/components/three-col-grid';
 @import 'partials/pages/work-detail';
 @import 'partials/pages/info';
-@import 'partials/mq-helper'; // for development only
+//@import 'partials/mq-helper'; // for development only
