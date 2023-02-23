@@ -7,32 +7,14 @@ import SEO from '../components/seo';
 import VideoCard from '../components/patterns/videoCard';
 
 const VFXPage = ({ data, location }) => {
-  const workData = data.allWpProject.nodes
-    .filter((item) => !item?.project?.category.includes('VFX/Finishing'))
-    .reverse();
+  const pageData = data.allWpProject.nodes;
 
   return (
     <Layout location={location}>
       <SEO title="Work" />
       <ul className="project-grid">
-        {workData.map((item) => {
-          const pageLink = `/work/${item.project.client
-            .toLowerCase()
-            .replaceAll(' ', '-')
-            .replaceAll('/', '-')
-            .replaceAll('’', '')
-            .replaceAll("'", '')
-            .replaceAll('‘', '')
-            .replaceAll('*', '')
-            .replaceAll(':', '')}-${item.project.projectName
-            .toLowerCase()
-            .replaceAll(' ', '-')
-            .replaceAll(':', '')
-            .replaceAll('*', '')
-            .replaceAll('.', '')
-            .replaceAll('’', '')
-            .replaceAll("'", '')
-            .replaceAll('‘', '')}`;
+        {pageData.map((item) => {
+          const pageLink = `/work/${item.slug}`;
 
           return (
             <li className="project-grid__item" key={pageLink}>
@@ -57,6 +39,7 @@ VFXPage.propTypes = {
     allWpProject: PropTypes.shape({
       nodes: PropTypes.arrayOf(
         PropTypes.shape({
+          slug: PropTypes.string,
           project: PropTypes.shape({
             category: PropTypes.arrayOf(PropTypes.string),
             client: PropTypes.string,
@@ -79,9 +62,14 @@ export default VFXPage;
 
 export const query = graphql`
   query {
-    allWpProject {
+    allWpProject(
+      filter: { project: { category: { eq: "VFX/Finishing" } } }
+      sort: { project: { categoryOrder: ASC } }
+    ) {
       nodes {
+        slug
         project {
+          categoryOrder
           category
           client
           director

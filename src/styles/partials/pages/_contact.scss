@@ -1,0 +1,35 @@
+.contact {
+  font-size: 1.5rem;
+  line-height: 1.25;
+  padding-bottom: $space-700;
+  padding-top: $space-300;
+
+  > .container {
+    padding: 0;
+  }
+
+  &__map {
+    margin-bottom: $space-500;
+  }
+
+  #map {
+    aspect-ratio: 555/312;
+  }
+
+  &__copy {
+    text-align: center;
+
+    p {
+      max-width: none;
+    }
+
+    a {
+      color: $white;
+    }
+  }
+
+  address {
+    margin-bottom: $space-500;
+    text-transform: uppercase;
+  }
+}

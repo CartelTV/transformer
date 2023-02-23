@@ -5,26 +5,10 @@ import { Link } from 'gatsby';
 import VideoCard from './videoCard';
 
 const ThreeColGrid = ({ videos }) => (
-  <div className="container">
-    <ul className="three-col-grid">
+  <div className="container three-col-grid">
+    <ul className="three-col-grid__list">
       {videos.map((item) => {
-        const pageLink = `/work/${item.node.project.client
-          .toLowerCase()
-          .replaceAll(' ', '-')
-          .replaceAll('/', '-')
-          .replaceAll('’', '')
-          .replaceAll("'", '')
-          .replaceAll('‘', '')
-          .replaceAll('*', '')
-          .replaceAll(':', '')}-${item.node.project.projectName
-          .toLowerCase()
-          .replaceAll(' ', '-')
-          .replaceAll(':', '')
-          .replaceAll('*', '')
-          .replaceAll('.', '')
-          .replaceAll('’', '')
-          .replaceAll("'", '')
-          .replaceAll('‘', '')}`;
+        const pageLink = `/work/${item.node.slug}`;
 
         return (
           <li className="three-col-grid__item" key={pageLink}>

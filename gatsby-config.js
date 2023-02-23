@@ -17,7 +17,6 @@ module.exports = {
       resolve: 'gatsby-source-wordpress',
       options: {
         url: 'http://54.187.0.234/graphql/',
-        refetchInterval: 30,
         schema: {
           requestConcurrency: 10,
           timeout: 90000,

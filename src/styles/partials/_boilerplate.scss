@@ -146,9 +146,10 @@ address {
 
 h1,
 .h1 {
-  font-family: $font-bold;
+  font-family: $font-reg;
   font-size: 2.5rem;
   line-height: 1.25;
+  text-transform: uppercase;
 
   @include mq($M) {
     font-size: 2.75rem;
@@ -163,7 +164,7 @@ h1,
 
 h2,
 .h2 {
-  font-family: $font-bold;
+  font-family: $font-reg;
   font-size: 1.5rem;
   line-height: 1.15384615;
 
@@ -180,7 +181,7 @@ h2,
 
 h3,
 .h3 {
-  font-family: $font-bold;
+  font-family: $font-reg;
   font-size: 1.125rem;
   line-height: 1.13636364;
 

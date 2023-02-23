@@ -10,36 +10,34 @@ const WorkDetailCopy = ({
   duration,
 }) => (
   <div className="work-detail__text">
-    <div className="work-detail__project">
-      <h1 className="work-detail__client">{client}</h1>
+    <h1 className="work-detail__heading">
+      <span className="work-detail__client">{client}</span>
       {projectName && (
-        <p className="work-detail__title">
-          <strong>{projectName}</strong>
-        </p>
+        <span className="work-detail__title"> - {projectName}</span>
       )}
-    </div>
+    </h1>
     <ul className="work-detail__meta">
       {director && (
         <li className="work-detail__meta-item">
-          <strong>Director:</strong> {director}
+          <strong>Director:</strong> <span>{director}</span>
         </li>
       )}
 
       {agency && (
         <li className="work-detail__meta-item">
-          <strong>Agency:</strong> {agency}
+          <strong>Agency:</strong> <span>{agency}</span>
         </li>
       )}
 
       {productionCompany && (
         <li className="work-detail__meta-item">
-          <strong>Production Company:</strong> {productionCompany}
+          <strong>Production Company:</strong> <span>{productionCompany}</span>
         </li>
       )}
 
       {duration && (
         <li className="work-detail__meta-item">
-          <strong>Duration:</strong> {duration}
+          <strong>Duration:</strong> <span>{duration}</span>
         </li>
       )}
     </ul>

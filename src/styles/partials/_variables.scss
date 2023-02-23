@@ -21,12 +21,10 @@ $XXL: 'min-width:' + $breakpoint-xxl;
 
 // FONTS
 // ------------------------------------------------------------------------------
-$font-reg: 'TypewriterCondensed-Regular', -apple-system, BlinkMacSystemFont,
-  Helvetica, Arial, sans-serif;
-$font-demibold: 'TypewriterCondensed-DemiBold', -apple-system,
-  BlinkMacSystemFont, Helvetica, Arial, sans-serif;
-$font-bold: 'TypewriterCondensed-Bold', -apple-system, BlinkMacSystemFont,
-  Helvetica, Arial, sans-serif;
+$font-reg: 'GillSans-Regular', -apple-system, BlinkMacSystemFont, Helvetica,
+  Arial, sans-serif;
+$font-light: 'GillSans-Light', -apple-system, BlinkMacSystemFont, Helvetica,
+  Arial, sans-serif;
 
 // COLORS
 // ------------------------------------------------------------------------------
@@ -68,6 +66,7 @@ $space-200: math.div($space, 4); // 4px
 $space-300: math.div($space, 2); // 8px
 $space-400: $space * 0.75; // 12px
 $space-500: $space; // 24px
+$space-550: $space * 1.5; // 32px
 $space-600: $space * 2; // 48px
 $space-700: $space * 3; // 72px
 $space-800: $space * 4; // 96px

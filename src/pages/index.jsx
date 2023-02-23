@@ -7,32 +7,14 @@ import SEO from '../components/seo';
 import VideoCard from '../components/patterns/videoCard';
 
 const IndexPage = ({ data, location }) => {
-  const homepageData = data.allWpProject.nodes
-    .filter((item) => item?.project?.showOnHomepage)
-    .reverse();
+  const homepageData = data.allWpProject.nodes;
 
   return (
     <Layout location={location}>
       <SEO title="Home" />
       <ul className="project-grid">
         {homepageData.map((item) => {
-          const pageLink = `/work/${item.project.client
-            .toLowerCase()
-            .replaceAll(' ', '-')
-            .replaceAll('/', '-')
-            .replaceAll('’', '')
-            .replaceAll("'", '')
-            .replaceAll('‘', '')
-            .replaceAll('*', '')
-            .replaceAll(':', '')}-${item.project.projectName
-            .toLowerCase()
-            .replaceAll(' ', '-')
-            .replaceAll(':', '')
-            .replaceAll('*', '')
-            .replaceAll('.', '')
-            .replaceAll('’', '')
-            .replaceAll("'", '')
-            .replaceAll('‘', '')}`;
+          const pageLink = `/work/${item.slug}`;
 
           return (
             <li className="project-grid__item" key={pageLink}>
@@ -78,8 +60,12 @@ export default IndexPage;
 
 export const query = graphql`
   query {
-    allWpProject {
+    allWpProject(
+      filter: { project: { showOnHomepage: { eq: true } } }
+      sort: { project: { categoryOrder: ASC } }
+    ) {
       nodes {
+        slug
         project {
           client
           director

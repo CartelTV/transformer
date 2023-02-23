@@ -19,6 +19,10 @@ const ContactPage = ({ data: { allWpPage }, location }) => {
       primaryContactPersonName,
       primaryContactPersonPhoneNumber,
       primaryContactPersonTitle,
+      secondaryContactPersonEmail,
+      secondaryContactPersonName,
+      secondaryContactPersonPhoneNumber,
+      secondaryContactPersonTitle,
     },
   } = allWpPage.edges[0].node;
 
@@ -113,36 +117,35 @@ const ContactPage = ({ data: { allWpPage }, location }) => {
   }, []);
   return (
     <Fragment>
-      <Helmet location={location}>
+      <Helmet>
         <script
           async
           defer
           src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAt8P10q1vokG0xnBf5O5pZEKp3ctyWFDw&callback=initMap"
         />
       </Helmet>
-      <Layout>
+      <Layout location={location}>
         <SEO title="Info" />
-        <article className="info">
+        <article className="contact">
           <div className="container">
-            <div className="info__col">
+            <div className="contact__map">
               <div id="map" />
             </div>
 
-            <div className="info__col">
+            <div className="contact__copy">
+              <h1 className="contact__heading">Contact</h1>
               <address>
-                <a href={`tel:${businessPhoneNumber.replaceAll('-', '')}`}>
-                  {businessPhoneNumber}
-                </a>
-                <br />
                 {businessAddressLine1}
                 <br />
                 {businessAddressLine2}
+                <br />
+                <a href={`tel:${businessPhoneNumber.replaceAll('-', '')}`}>
+                  {businessPhoneNumber}
+                </a>
               </address>
 
               <p>
-                {primaryContactPersonName}
-                <br />
-                {primaryContactPersonTitle}
+                {primaryContactPersonName} - {primaryContactPersonTitle}
                 <br />
                 <a href={`mailto:${primaryContactPersonEmail}`}>
                   {primaryContactPersonEmail}
@@ -156,6 +159,25 @@ const ContactPage = ({ data: { allWpPage }, location }) => {
                 >
                   {primaryContactPersonPhoneNumber}
                 </a>
+              </p>
+
+              <p>
+                {secondaryContactPersonName} - {secondaryContactPersonTitle}
+                <br />
+                <a href={`mailto:${secondaryContactPersonEmail}`}>
+                  {secondaryContactPersonEmail}
+                </a>
+                <br />
+                {secondaryContactPersonPhoneNumber && (
+                  <a
+                    href={`tel:${secondaryContactPersonPhoneNumber.replaceAll(
+                      '-',
+                      ''
+                    )}`}
+                  >
+                    {secondaryContactPersonPhoneNumber}
+                  </a>
+                )}
               </p>
             </div>
           </div>
@@ -178,6 +200,10 @@ export const query = graphql`
             primaryContactPersonName
             primaryContactPersonPhoneNumber
             primaryContactPersonTitle
+            secondaryContactPersonEmail
+            secondaryContactPersonName
+            secondaryContactPersonPhoneNumber
+            secondaryContactPersonTitle
           }
         }
       }
@@ -199,6 +225,10 @@ ContactPage.propTypes = {
               primaryContactPersonName: PropTypes.string,
               primaryContactPersonPhoneNumber: PropTypes.string,
               primaryContactPersonTitle: PropTypes.string,
+              secondaryContactPersonEmail: PropTypes.string,
+              secondaryContactPersonName: PropTypes.string,
+              secondaryContactPersonPhoneNumber: PropTypes.string,
+              secondaryContactPersonTitle: PropTypes.string,
             }),
           }),
         })

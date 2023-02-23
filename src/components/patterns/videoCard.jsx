@@ -5,7 +5,6 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 const VideoCard = ({ activeImage, staticImage, client, projectName }) => {
   const cardImageActive = getImage(activeImage);
   const cardImageStatic = getImage(staticImage);
-  console.log({ cardImageActive, cardImageStatic });
 
   return (
     <div className="video-card">

@@ -9,7 +9,7 @@ body {
 
 strong,
 b {
-  font-family: $font-bold;
+  font-family: $font-reg;
 }
 
 main,
@@ -148,27 +148,14 @@ td {
 }
 
 .content-wrapper {
-  &__grid {
-    background: rgb(85, 95, 95);
-    background: linear-gradient(
-      180deg,
-      rgba(85, 95, 95, 0.5),
-      rgb(184, 188, 187, 0.5)
-    );
-    height: 100vh;
-    overflow-y: auto;
-    padding-left: $space-500;
-    padding-right: $space-500;
-  }
-
-  &__page {
-    background-color: $color-grey-1;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    justify-content: space-between;
-    overflow-y: auto;
-    padding-left: $space-500;
-    padding-right: $space-500;
-  }
+  background: rgb(85, 95, 95);
+  background: linear-gradient(
+    180deg,
+    rgba(85, 95, 95, 0.5),
+    rgb(184, 188, 187, 0.5)
+  );
+  height: 100vh;
+  overflow-y: auto;
+  padding-left: $space-500;
+  padding-right: $space-500;
 }

@@ -7,7 +7,6 @@ import transformerLogoLight from '../images/transformer-logo-light.svg';
 import transformerLogoDark from '../images/transformer-logo-dark.svg';
 
 const Header = ({ location, siteTitle }) => {
-  console.log('location:', location);
   const [menuIsExpanded, setMenuIsExpanded] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef();

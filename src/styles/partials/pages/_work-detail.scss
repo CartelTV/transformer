@@ -1,30 +1,16 @@
 .work-detail {
-  > .container {
-    @include mq($M) {
-      display: flex;
-      flex-direction: row;
+  margin-bottom: $space-500;
 
-      @supports (display: grid) {
-        display: grid;
-        grid-template-columns: calc(67% - 0.75rem) calc(33% - 0.75rem);
-      }
-    }
+  > .container {
+    border-bottom: 3px solid $white;
+    padding: 0;
+    padding-bottom: $space-550;
   }
 
   &__video {
     background-color: $black;
-    margin-bottom: $space-400;
+    margin-bottom: $space-550;
     position: relative;
-
-    @include mq($M) {
-      flex-basis: 65.55%;
-      margin-bottom: 0;
-      margin-left: $space-400;
-    }
-
-    @include mq($L) {
-      margin-left: 0;
-    }
 
     iframe {
       &:focus {
@@ -64,40 +50,45 @@
     width: 100%;
   }
 
-  &__text {
-    @include mq($M) {
-      align-items: flex-start;
-      flex-basis: 34.45%;
-      flex-direction: column;
-      justify-content: center;
-      padding-left: 1.9rem;
-      padding-right: 0;
-      position: relative;
-    }
+  &__meta {
+    transform: translateX(-$space-200);
   }
 
-  &__project {
-    margin-bottom: $space-500;
+  &__heading {
+    font-size: 2.25rem;
+    letter-spacing: 0.2em;
+    margin-bottom: $space-300;
+    text-align: center;
   }
 
   &__client {
-    font-size: 2.25rem;
-    margin-bottom: $space-200;
-
-    &::after {
-      border: 0;
-    }
   }
 
   &__title {
-    font-size: 1.75rem;
-    letter-spacing: 1px;
+    font-family: $font-light;
+    font-weight: 300;
   }
 
   &__meta {
     font-size: 1.25rem;
+    line-height: 1.25;
+    text-align: center;
 
     &-item {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin-left: auto;
+      margin-right: auto;
+
+      strong {
+        text-align: right;
+      }
+
+      span {
+        padding-left: $space-200;
+        text-align: left;
+      }
+
       &:not(:last-child) {
         margin-bottom: $space-100;
       }

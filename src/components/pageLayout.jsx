@@ -11,7 +11,7 @@ const Layout = ({ children, location }) => (
     <a className="skip-link" href="#main">
       skip to main content
     </a>
-    <div className="content-wrapper__page">
+    <div className="content-wrapper">
       <Header location={location} />
       <main className="main" id="main" role="main">
         {children}

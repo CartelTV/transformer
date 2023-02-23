@@ -94,8 +94,21 @@ export const query = graphql`
     allVideos: allWpProject {
       edges {
         node {
+          slug
           project {
             client
+            staticImage {
+              gatsbyImage(
+                breakpoints: [376, 751, 1920]
+                cropFocus: CENTER
+                fit: COVER
+                formats: [AUTO, WEBP, AVIF]
+                layout: FULL_WIDTH
+                placeholder: BLURRED
+                width: 1920
+              )
+              altText
+            }
             image {
               gatsbyImage(
                 breakpoints: [376, 751, 1920]
