@@ -15,5 +15,21 @@
 
   &__item {
     max-width: none;
+
+    a {
+      &:focus-visible {
+        outline-color: $white;
+        outline-offset: 4px;
+        outline-width: 1px;
+
+        .video-card__image--static {
+          opacity: 0;
+        }
+
+        .video-card__content {
+          opacity: 1;
+        }
+      }
+    }
   }
 }

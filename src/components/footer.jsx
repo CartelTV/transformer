@@ -7,7 +7,7 @@ const Footer = () => (
   <footer className="footer" role="contentinfo">
     <div className="container">
       <div className="footer__logo-wrapper">
-        <Link to="/">
+        <Link className="footer__logo-link" to="/">
           <img
             className="footer__logo"
             src={transformerLogo}

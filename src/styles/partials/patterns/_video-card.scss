@@ -4,7 +4,6 @@
   justify-content: center;
   position: relative;
 
-  &:focus,
   &:hover {
     .video-card__image--static {
       opacity: 0;
@@ -24,12 +23,6 @@
     grid-column: 1 / 2;
     grid-row: 1 / 2;
     transform: opacity 0.33s ease-out;
-
-    &--static {
-    }
-
-    &--active {
-    }
   }
 
   &__content-wrapper {

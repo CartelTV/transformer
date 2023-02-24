@@ -27,8 +27,10 @@
     position: relative;
     transition: opacity 1s ease-out;
 
-    &:focus {
-      outline: 5px solid $blue;
+    &:focus-visible {
+      outline-color: $white;
+      outline-offset: 4px;
+      outline-width: 1px;
     }
 
     &::after {

@@ -13,8 +13,14 @@
     grid-template-columns: repeat(3, 1fr);
 
     &__item {
-      @supports selector(:has) {
+      a {
+        &:focus-visible {
+          outline-color: $white;
+          outline-offset: 4px;
+          outline-width: 1px;
+        }
       }
+
       // 1/7 - 3 cols wide and 3 rows tall
       &:nth-of-type(7n + 1) {
         grid-column: span 3;
