@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
-import transformerLogo from '../images/transformer-logo-light.svg';
+import transformerLogo from '../images/transformer-logo-dark.svg';
 
 const Footer = () => (
   <footer className="footer" role="contentinfo">
@@ -18,13 +18,7 @@ const Footer = () => (
         />
       </Link>
 
-      <address>
-        1800 Stanford Street
-        <br />
-        Santa Monica, CA 90404
-        <br />
-        <a href="tel:3102825555">310-282-5555</a>
-      </address>
+      <address>1800 Stanford Street, Santa Monica, CA 90404</address>
     </div>
   </footer>
 );

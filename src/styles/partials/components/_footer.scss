@@ -3,14 +3,9 @@
 // ===========================================================================
 
 .footer {
-  background-color: $color-grey-1;
-  padding-bottom: $space-500;
+  border-top: 3px solid $black;
+  padding-bottom: $space-400;
   padding-top: $space-500;
-
-  @include mq($M) {
-    padding-bottom: $space-600;
-    padding-top: $space-600;
-  }
 
   > .container {
     align-items: center;
@@ -20,15 +15,19 @@
   }
 
   &__logo {
-    margin-bottom: $space-400;
-    width: 12rem;
-
-    @include mq($M) {
-      width: 15rem;
-    }
+    margin-bottom: $space-200;
+    max-width: 25rem;
+    width: 100%;
   }
 
   address {
+    color: $black;
+    font-size: 0.8125rem;
     text-align: center;
+    text-transform: uppercase;
+
+    a {
+      color: $black;
+    }
   }
 }

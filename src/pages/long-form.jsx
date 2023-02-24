@@ -6,12 +6,12 @@ import Layout from '../components/gridLayout';
 import SEO from '../components/seo';
 import VideoCard from '../components/patterns/videoCard';
 
-const VFXPage = ({ data, location }) => {
+const LongFormPage = ({ data, location }) => {
   const pageData = data.allWpProject.nodes;
 
   return (
     <Layout location={location}>
-      <SEO title="VFX/Finishing" />
+      <SEO title="Long Form" />
       <ul className="project-grid">
         {pageData.map((item) => {
           const pageLink = `/work/${item.slug}`;
@@ -34,7 +34,7 @@ const VFXPage = ({ data, location }) => {
   );
 };
 
-VFXPage.propTypes = {
+LongFormPage.propTypes = {
   data: PropTypes.shape({
     allWpProject: PropTypes.shape({
       nodes: PropTypes.arrayOf(
@@ -54,16 +54,16 @@ VFXPage.propTypes = {
   location: PropTypes.shape({}),
 };
 
-VFXPage.defaultProps = {
+LongFormPage.defaultProps = {
   location: {},
 };
 
-export default VFXPage;
+export default LongFormPage;
 
 export const query = graphql`
   query {
     allWpProject(
-      filter: { project: { category: { eq: "VFX/Finishing" } } }
+      filter: { project: { category: { eq: "Long Form" } } }
       sort: { project: { categoryOrder: ASC } }
     ) {
       nodes {

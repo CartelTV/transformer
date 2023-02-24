@@ -66,8 +66,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-accessibilityjs`,
       options: {
-        injectStyles: false,
-        errorClassName: false,
+        injectStyles: true,
+        errorClassName: true,
       },
     },
   ],

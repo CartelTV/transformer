@@ -1,0 +1,13 @@
+.reel {
+  > .container {
+    max-width: none;
+    padding: 0;
+  }
+
+  &__copy {
+    font-size: 2rem;
+    max-width: none;
+    text-align: center;
+    text-transform: uppercase;
+  }
+}

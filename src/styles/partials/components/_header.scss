@@ -3,16 +3,21 @@
 // ===========================================================================
 .header {
   align-items: center;
-  border-bottom: 3px solid $color-grey-1;
+  background: linear-gradient(
+    180deg,
+    rgba(152, 157, 157, 0.67) 0%,
+    rgba(165, 170, 170, 0.67) 100%
+  );
   display: flex;
   flex-direction: column;
   gap: $space-300;
   justify-content: space-between;
-  margin-bottom: $space-500;
   padding-bottom: $space-500;
   padding-top: $space-200;
+  position: relative;
   transition: margin-top 0.33s ease-out;
   width: 100%;
+  z-index: 1;
 
   @include mq($M) {
     margin-left: auto;
@@ -32,7 +37,7 @@
 
   &__menu-button {
     align-items: center;
-    color: $color-grey-1;
+    color: $white;
     display: flex;
     font-size: 1.5rem;
     font-weight: 600;
@@ -53,53 +58,30 @@
   }
 
   a:has(.header__logo) {
-    align-self: flex-start;
     outline: none;
-    padding-bottom: $space-200;
 
     &:focus {
-      border-bottom: 1px solid $color-grey-1;
+      border-bottom: 1px solid $white;
     }
   }
 
   &__logo-wrapper {
-    border-top: 3px solid $color-grey-1;
-    display: flex;
-    justify-content: center;
+    border-top: 3px solid $white;
     padding-top: $space-500;
     width: 100%;
 
     @include mq($M) {
       border-top: 0;
+      padding-bottom: $space-200;
       padding-top: 0;
     }
   }
 
   &__logo {
-    max-width: 15rem;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 25rem;
     width: 100%;
-  }
-
-  &--light {
-    border-bottom: 3px solid $color-grey-9;
-
-    .header__menu-button {
-      color: $color-grey-9;
-    }
-
-    a:has(.header__logo) {
-      &:focus {
-        border-bottom: 1px solid $color-grey-9;
-      }
-    }
-
-    .header__logo-wrapper {
-      border-top: 3px solid $color-grey-9;
-
-      @include mq($M) {
-        border-top: 0;
-      }
-    }
   }
 }
 
@@ -118,7 +100,7 @@
     }
 
     &.is-open {
-      border-bottom: 3px solid $color-grey-1;
+      border-bottom: 3px solid $white;
       max-height: 306px;
       opacity: 1;
     }
@@ -128,7 +110,9 @@
     display: none;
 
     @include mq($M) {
+      border-top: 3px solid $white;
       display: block;
+      padding-top: $space-300;
       width: 100%;
     }
   }
@@ -140,16 +124,17 @@
 
     @include mq($M) {
       flex-direction: row;
-      gap: $space-500;
-      justify-content: space-between;
+      gap: $space-600;
+      justify-content: center;
     }
   }
 
   &__link {
-    color: $color-grey-1;
+    color: $white;
     font-size: 1.5rem;
     outline: none;
     text-decoration: none;
+    transition: color 0.33s ease-out, text-decoration 0.33s ease-out;
 
     @include mq($M) {
       font-size: 1.25rem;
@@ -157,16 +142,8 @@
 
     &:focus,
     &:hover {
+      color: $black;
       text-decoration: underline;
-    }
-  }
-
-  &--light {
-    &.is-open {
-      border-bottom: 3px solid $color-grey-9;
-    }
-    .nav__link {
-      color: $color-grey-9;
     }
   }
 }
