@@ -105,6 +105,8 @@ const Header = ({ location, siteTitle }) => {
               className="header__logo"
               src={transformerLogoLight}
               alt="Transformer logo"
+              height="55"
+              width="400"
             />
           </Link>
         </div>
