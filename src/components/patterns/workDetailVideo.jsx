@@ -52,7 +52,11 @@ WorkDetailVideo.propTypes = {
   }).isRequired,
   videoUrl: PropTypes.string.isRequired,
   client: PropTypes.string.isRequired,
-  projectName: PropTypes.string.isRequired,
+  projectName: PropTypes.string,
+};
+
+WorkDetailVideo.defaultProps = {
+  projectName: '',
 };
 
 export default WorkDetailVideo;

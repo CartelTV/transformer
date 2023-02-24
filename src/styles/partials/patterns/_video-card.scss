@@ -75,4 +75,10 @@
     font-family: $font-light;
     font-weight: 300;
   }
+
+  @media not all and (min-resolution: 0.001dpcm) {
+    .gatsby-image-wrapper img {
+      height: auto;
+    }
+  }
 }
