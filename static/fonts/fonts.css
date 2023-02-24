@@ -6,12 +6,14 @@
 
 @font-face {
   font-family: 'GillSans-Regular';
+  font-display: swap;
   src: url('GillSans-Regular.woff2') format('woff2'),
     url('GillSans-Regular.woff') format('woff');
 }
 
 @font-face {
   font-family: 'GillSans-Light';
+  font-display: swap;
   src: url('GillSans-Light.woff2') format('woff2'),
     url('GillSans-Light.woff') format('woff');
 }
