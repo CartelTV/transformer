@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import { graphql, Link, useStaticQuery } from 'gatsby';
-import { useWindowWidth } from '@react-hook/window-size';
+import { useWindowSize } from '../hooks/useWindowSize';
 
 import transformerLogoLight from '../images/transformer-logo-light.svg';
 
@@ -9,7 +9,8 @@ const Header = ({ location, siteTitle }) => {
   const [menuIsExpanded, setMenuIsExpanded] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef();
-  const windowWidth = useWindowWidth();
+  const size = useWindowSize();
+  const windowWidth = size.width;
 
   const data = useStaticQuery(graphql`
     query DefaultNavQuery {
