@@ -1,6 +1,3 @@
-- push to Pyrographic Netlify account for dev URL
-- [WordPress] create a WP instance on client's host
-  - SSL required
 - cross-browser testing
 - Lighthouse audits
   - accessibility
@@ -10,11 +7,6 @@
     - hidden menus?
 - overall audit
   - https://sonarwhal.com/scanner
-- √ remove unused boilerplate files and assets (images, icons, fonts, etc.)
-- √ update gatsby-config file for launch
-  - favicon
-  - create Open Graph/Twitter Card image (1200px x 1200px)
-  - connect to any social media sites
 - update README
 - [WordPress] set up Updraft Plus backups
 - final payment
