@@ -69,13 +69,17 @@
     font-weight: 300;
   }
 
+  // iOS Safari
   @supports (-webkit-touch-callout: none) {
+    .video-card__image-wrapper,
     .gatsby-image-wrapper img {
       height: auto;
     }
   }
 
+  // Safari desktop
   @media not all and (min-resolution: 0.001dpcm) {
+    .video-card__image-wrapper,
     .gatsby-image-wrapper img {
       height: auto;
     }
