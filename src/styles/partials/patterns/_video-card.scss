@@ -76,6 +76,12 @@
     font-weight: 300;
   }
 
+  @supports (-webkit-touch-callout: none) {
+    .gatsby-image-wrapper img {
+      height: auto;
+    }
+  }
+
   @media not all and (min-resolution: 0.001dpcm) {
     .gatsby-image-wrapper img {
       height: auto;
