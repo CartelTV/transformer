@@ -63,12 +63,12 @@ module.exports = {
         icon: `src/images/favicon.png`, // This path is relative to the root of the site.
       },
     },
-    {
-      resolve: `gatsby-plugin-accessibilityjs`,
-      options: {
-        injectStyles: true,
-        errorClassName: true,
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-accessibilityjs`,
+    //   options: {
+    //     injectStyles: false,
+    //     errorClassName: false,
+    //   },
+    // },
   ],
 };
