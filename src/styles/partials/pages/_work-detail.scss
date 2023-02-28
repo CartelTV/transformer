@@ -1,11 +1,7 @@
 .work-detail {
+  border-bottom: 3px solid $white;
   margin-bottom: $space-500;
-
-  > .container {
-    border-bottom: 3px solid $white;
-    padding: 0;
-    padding-bottom: $space-550;
-  }
+  padding-bottom: $space-550;
 
   &__video {
     background-color: $black;

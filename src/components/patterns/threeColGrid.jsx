@@ -5,7 +5,7 @@ import { Link } from 'gatsby';
 import VideoCard from './videoCard';
 
 const ThreeColGrid = ({ videos }) => (
-  <div className="container three-col-grid">
+  <div className="three-col-grid">
     <ul className="three-col-grid__list">
       {videos.map((item) => {
         const pageLink = `/work/${item.node.slug}`;

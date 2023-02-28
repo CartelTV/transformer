@@ -11,7 +11,7 @@ const WorkDetailVideo = ({
   client,
   projectName,
 }) =>
-  console.log('videoIsPlaying:', videoIsPlaying) || (
+  console.log('thumbnail:', thumbnail) || (
     <div className="work-detail__video">
       <button
         className={`work-detail__thumbnail-button ${

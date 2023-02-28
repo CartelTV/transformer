@@ -3,16 +3,13 @@
 // ===========================================================================
 
 .footer {
+  align-items: center;
   border-top: 3px solid $black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding-bottom: $space-400;
   padding-top: $space-500;
-
-  > .container {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
 
   &__logo-wrapper {
     width: 100%;

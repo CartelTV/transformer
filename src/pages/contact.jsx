@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 
-import Layout from '../components/pageLayout';
+import Layout from '../components/layout';
 import SEO from '../components/seo';
 
 import iconMapMarker from '../images/map-pin.png';
@@ -127,59 +127,57 @@ const ContactPage = ({ data: { allWpPage }, location }) => {
       <Layout location={location}>
         <SEO title="Info" />
         <article className="contact">
-          <div className="container">
-            <div className="contact__map">
-              <div id="map" />
-            </div>
+          <div className="contact__map">
+            <div id="map" />
+          </div>
 
-            <div className="contact__copy">
-              <h1 className="contact__heading">Contact</h1>
-              <address>
-                {businessAddressLine1}
-                <br />
-                {businessAddressLine2}
-                <br />
-                <a href={`tel:${businessPhoneNumber.replaceAll('-', '')}`}>
-                  {businessPhoneNumber}
-                </a>
-              </address>
+          <div className="contact__copy">
+            <h1 className="contact__heading">Contact</h1>
+            <address>
+              {businessAddressLine1}
+              <br />
+              {businessAddressLine2}
+              <br />
+              <a href={`tel:${businessPhoneNumber.replaceAll('-', '')}`}>
+                {businessPhoneNumber}
+              </a>
+            </address>
 
-              <p>
-                {primaryContactPersonName} - {primaryContactPersonTitle}
-                <br />
-                <a href={`mailto:${primaryContactPersonEmail}`}>
-                  {primaryContactPersonEmail}
-                </a>
-                <br />
+            <p>
+              {primaryContactPersonName} - {primaryContactPersonTitle}
+              <br />
+              <a href={`mailto:${primaryContactPersonEmail}`}>
+                {primaryContactPersonEmail}
+              </a>
+              <br />
+              <a
+                href={`tel:${primaryContactPersonPhoneNumber.replaceAll(
+                  '-',
+                  ''
+                )}`}
+              >
+                {primaryContactPersonPhoneNumber}
+              </a>
+            </p>
+
+            <p>
+              {secondaryContactPersonName} - {secondaryContactPersonTitle}
+              <br />
+              <a href={`mailto:${secondaryContactPersonEmail}`}>
+                {secondaryContactPersonEmail}
+              </a>
+              <br />
+              {secondaryContactPersonPhoneNumber && (
                 <a
-                  href={`tel:${primaryContactPersonPhoneNumber.replaceAll(
+                  href={`tel:${secondaryContactPersonPhoneNumber.replaceAll(
                     '-',
                     ''
                   )}`}
                 >
-                  {primaryContactPersonPhoneNumber}
+                  {secondaryContactPersonPhoneNumber}
                 </a>
-              </p>
-
-              <p>
-                {secondaryContactPersonName} - {secondaryContactPersonTitle}
-                <br />
-                <a href={`mailto:${secondaryContactPersonEmail}`}>
-                  {secondaryContactPersonEmail}
-                </a>
-                <br />
-                {secondaryContactPersonPhoneNumber && (
-                  <a
-                    href={`tel:${secondaryContactPersonPhoneNumber.replaceAll(
-                      '-',
-                      ''
-                    )}`}
-                  >
-                    {secondaryContactPersonPhoneNumber}
-                  </a>
-                )}
-              </p>
-            </div>
+              )}
+            </p>
           </div>
         </article>
       </Layout>

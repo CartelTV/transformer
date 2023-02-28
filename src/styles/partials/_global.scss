@@ -144,6 +144,7 @@ td {
 
   @include mq($L) {
     max-width: ($container-width * 1.5);
+    padding: 0;
   }
 }
 

@@ -1,31 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
+import { getImage } from 'gatsby-plugin-image';
 
-import Layout from '../components/gridLayout';
+import Layout from '../components/layout';
 import SEO from '../components/seo';
+import WorkDetailVideo from '../components/patterns/workDetailVideo';
 
 const ReelPage = ({ data: { allWpPage }, location }) => {
   const {
-    reelPage: { videoUrl, pageCopy },
+    reelPage: { videoUrl, reelThumbnail, pageCopy },
   } = allWpPage.edges[0].node;
+
+  const [videoIsPlaying, setVideoIsPlaying] = useState(false);
+
+  const thumbnail = getImage(reelThumbnail);
 
   return (
     <Layout location={location}>
       <SEO title="Reel" />
       <article className="reel">
-        <div className="container">
-          <div className="reel__video-wrapper iframe-container iframe-container-16x9">
-            <iframe
-              src={videoUrl}
-              title="Transformer Reel"
-              width="1920"
-              height="1080"
-              allowFullScreen
-            />
-          </div>
-          <p className="reel__copy">{pageCopy}</p>
-        </div>
+        <WorkDetailVideo
+          videoIsPlaying={videoIsPlaying}
+          setVideoIsPlaying={setVideoIsPlaying}
+          thumbnail={thumbnail}
+          image={reelThumbnail}
+          videoUrl={videoUrl}
+          client="Transforer"
+          projectName="Reel"
+        />
+        <p className="reel__copy">{pageCopy}</p>
       </article>
     </Layout>
   );
@@ -39,6 +43,7 @@ ReelPage.propTypes = {
           node: PropTypes.shape({
             reelPage: PropTypes.shape({
               videoUrl: PropTypes.string,
+              reelThumbnail: PropTypes.shape({}),
               pageCopy: PropTypes.string,
             }),
           }),
@@ -62,6 +67,18 @@ export const query = graphql`
         node {
           reelPage {
             videoUrl
+            reelThumbnail {
+              gatsbyImage(
+                breakpoints: [376, 751, 1200]
+                cropFocus: CENTER
+                fit: COVER
+                formats: [AUTO, WEBP, AVIF]
+                layout: FULL_WIDTH
+                placeholder: BLURRED
+                width: 1200
+              )
+              altText
+            }
             pageCopy
           }
         }

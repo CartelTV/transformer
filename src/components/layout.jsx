@@ -12,11 +12,13 @@ const Layout = ({ children, location }) => (
       skip to main content
     </a>
     <div className="content-wrapper">
-      <Header location={location} />
-      <main className="main" id="main" role="main">
-        {children}
-      </main>
-      <Footer />
+      <div className="container">
+        <Header location={location} />
+        <main className="main" id="main" role="main">
+          {children}
+        </main>
+        <Footer />
+      </div>
     </div>
   </Fragment>
 );

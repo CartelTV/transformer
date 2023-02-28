@@ -27,10 +27,6 @@
     padding-top: $space-500;
   }
 
-  @include mq($XXL) {
-    width: 75%;
-  }
-
   &.is-open {
     margin-top: 306px;
   }
@@ -58,7 +54,7 @@
   }
 
   &__logo-wrapper {
-    border-top: 3px solid $white;
+    border-top: 2px solid $white;
     padding-top: $space-500;
     width: 100%;
 
@@ -72,7 +68,7 @@
   &__logo {
     margin-left: auto;
     margin-right: auto;
-    max-width: 25rem;
+    max-width: 19rem;
     width: 100%;
 
     &-link {
@@ -100,7 +96,7 @@
     }
 
     &.is-open {
-      border-bottom: 3px solid $white;
+      border-bottom: 2px solid $white;
       max-height: 306px;
       opacity: 1;
     }
@@ -110,7 +106,7 @@
     display: none;
 
     @include mq($M) {
-      border-top: 3px solid $white;
+      border-top: 2px solid $white;
       display: block;
       padding-top: $space-300;
       width: 100%;
@@ -124,21 +120,18 @@
 
     @include mq($M) {
       flex-direction: row;
-      gap: $space-600;
+      gap: $space-500;
       justify-content: center;
     }
   }
 
   &__link {
     color: $white;
-    font-size: 1.5rem;
+    font-size: 1.125rem;
     outline: none;
     text-decoration: none;
+    text-transform: uppercase;
     transition: color 0.33s ease-out, text-decoration 0.33s ease-out;
-
-    @include mq($M) {
-      font-size: 1.25rem;
-    }
 
     &:focus,
     &:hover {

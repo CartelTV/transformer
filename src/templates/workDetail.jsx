@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
 
-import Layout from '../components/pageLayout';
+import Layout from '../components/layout';
 import SEO from '../components/seo';
 import WorkDetailVideo from '../components/patterns/workDetailVideo';
 import WorkDetailCopy from '../components/patterns/workDetailCopy';
@@ -37,25 +37,23 @@ const WorkDetailPage = ({ data, location }) => {
     <Layout location={location}>
       <SEO title={`${client} - ${projectName}`} />
       <article className="work-detail">
-        <div className="container">
-          <WorkDetailVideo
-            videoIsPlaying={videoIsPlaying}
-            setVideoIsPlaying={setVideoIsPlaying}
-            thumbnail={thumbnail}
-            image={image}
-            videoUrl={videoUrl}
-            client={client}
-            projectName={projectName}
-          />
-          <WorkDetailCopy
-            client={client}
-            projectName={projectName}
-            director={director}
-            agency={agency}
-            productionCompany={productionCompany}
-            duration={duration}
-          />
-        </div>
+        <WorkDetailVideo
+          videoIsPlaying={videoIsPlaying}
+          setVideoIsPlaying={setVideoIsPlaying}
+          thumbnail={thumbnail}
+          image={image}
+          videoUrl={videoUrl}
+          client={client}
+          projectName={projectName}
+        />
+        <WorkDetailCopy
+          client={client}
+          projectName={projectName}
+          director={director}
+          agency={agency}
+          productionCompany={productionCompany}
+          duration={duration}
+        />
       </article>
       <ThreeColGrid videos={moreVideos} />
     </Layout>
