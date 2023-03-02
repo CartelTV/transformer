@@ -4,6 +4,7 @@ import { graphql, Link, useStaticQuery } from 'gatsby';
 import { useWindowSize } from '../hooks/useWindowSize';
 
 import transformerLogoLight from '../images/transformer-logo-light.svg';
+import menuIcon from '../images/icon-menu.svg';
 
 const Header = ({ location, siteTitle }) => {
   const [menuIsExpanded, setMenuIsExpanded] = useState(false);
@@ -65,7 +66,7 @@ const Header = ({ location, siteTitle }) => {
   return (
     <Fragment>
       <nav
-        className={`nav nav--small ${isOpen ? 'is-open' : ''}`}
+        className={`nav nav--small ${isOpen ? 'is-open delayed-fade-in' : ''}`}
         role="navigation"
         id="nav-list-small"
         hidden={windowWidth > 767 ? false : !menuIsExpanded}
@@ -96,7 +97,13 @@ const Header = ({ location, siteTitle }) => {
           aria-expanded={menuIsExpanded}
           onClick={toggleMenu}
         >
-          Menu
+          <img
+            src={menuIcon}
+            alt=""
+            aria-hidden="true"
+            width="40"
+            height="40"
+          />
         </button>
 
         <div className="header__logo-wrapper">

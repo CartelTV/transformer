@@ -1,12 +1,16 @@
 .three-col-grid {
+  margin-left: auto;
+  margin-right: auto;
   padding: 0;
+
+  @include mq($M) {
+    width: 95%;
+  }
 
   &__list {
     display: grid;
     gap: $space-500;
     margin-bottom: 1.125rem !important;
-    margin-left: auto;
-    margin-right: auto;
 
     @include mq($M) {
       grid-template-columns: repeat(3, 1fr);
@@ -29,6 +33,12 @@
         .video-card__content {
           opacity: 1;
         }
+      }
+    }
+
+    .video-card__content {
+      @include mq($M) {
+        font-size: 1.125rem;
       }
     }
   }

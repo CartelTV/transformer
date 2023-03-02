@@ -1,7 +1,17 @@
 .work-detail {
-  border-bottom: 3px solid $white;
+  border-bottom: 1px solid $white;
+  font-family: $font-light;
+  font-size: 1.125rem;
+  letter-spacing: 0.15em;
   margin-bottom: $space-500;
   padding-bottom: $space-550;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+
+  @include mq($M) {
+    width: 95%;
+  }
 
   &__video {
     background-color: $black;
@@ -52,44 +62,28 @@
     transform: translateX(-$space-200);
   }
 
+  &__text {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: $space-400;
+
+    @include mq($M) {
+      flex-direction: row;
+      margin-bottom: 0;
+    }
+  }
+
   &__heading {
-    font-size: 2.25rem;
-    letter-spacing: 0.2em;
-    margin-bottom: $space-300;
-    text-align: center;
-  }
-
-  &__client {
-  }
-
-  &__title {
     font-family: $font-light;
-    font-weight: 300;
+    font-size: 1.125rem;
+    margin-bottom: 0;
   }
 
   &__meta {
-    font-size: 1.25rem;
-    line-height: 1.25;
-    text-align: center;
-
-    &-item {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      margin-left: auto;
-      margin-right: auto;
-
-      strong {
-        text-align: right;
-      }
-
-      span {
-        padding-left: $space-200;
-        text-align: left;
-      }
-
-      &:not(:last-child) {
-        margin-bottom: $space-100;
-      }
-    }
+    margin-bottom: 0;
+    margin-left: $space-300;
+    max-width: none;
   }
 }

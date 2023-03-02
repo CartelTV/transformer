@@ -3,11 +3,6 @@
 // ===========================================================================
 .header {
   align-items: center;
-  background: linear-gradient(
-    180deg,
-    rgba(98, 109, 109, 0.67) 0%,
-    rgba(113, 122, 123, 0.67) 100%
-  );
   display: flex;
   flex-direction: column;
   gap: $space-300;
@@ -28,7 +23,7 @@
   }
 
   &.is-open {
-    margin-top: 306px;
+    margin-top: 236px;
   }
 
   &__menu-button {
@@ -38,6 +33,7 @@
     font-size: 1.5rem;
     font-weight: 600;
     letter-spacing: 1px;
+    opacity: 0.9;
     outline: none;
     padding-bottom: $space-300;
     padding-top: $space-300;
@@ -54,7 +50,7 @@
   }
 
   &__logo-wrapper {
-    border-top: 2px solid $white;
+    border-top: 1px solid $white;
     padding-top: $space-500;
     width: 100%;
 
@@ -89,16 +85,15 @@
     position: absolute;
     top: $space-300;
     transition: max-height 0.33s ease-out 0.33s, opacity 0.33s ease-out;
-    width: calc(100% - 3rem);
+    width: calc(93% - 3rem);
 
     @include mq($M) {
       display: none;
     }
 
     &.is-open {
-      border-bottom: 2px solid $white;
+      border-bottom: 1px solid $white;
       max-height: 306px;
-      opacity: 1;
     }
   }
 
@@ -106,7 +101,7 @@
     display: none;
 
     @include mq($M) {
-      border-top: 2px solid $white;
+      border-top: 1px solid $white;
       display: block;
       padding-top: $space-300;
       width: 100%;
@@ -127,7 +122,9 @@
 
   &__link {
     color: $white;
-    font-size: 1.125rem;
+    font-family: $font-light;
+    font-size: 1rem;
+    letter-spacing: 0.15em;
     outline: none;
     text-decoration: none;
     text-transform: uppercase;

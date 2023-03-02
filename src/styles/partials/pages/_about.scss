@@ -1,0 +1,10 @@
+.about {
+  &__copy {
+    p {
+      font-family: $font-light;
+      font-size: 1.25rem;
+      letter-spacing: 0.15em;
+      max-width: none;
+    }
+  }
+}

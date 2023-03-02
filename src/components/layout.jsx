@@ -13,10 +13,12 @@ const Layout = ({ children, location }) => (
     </a>
     <div className="content-wrapper">
       <div className="container">
-        <Header location={location} />
-        <main className="main" id="main" role="main">
-          {children}
-        </main>
+        <div>
+          <Header location={location} />
+          <main className="main" id="main" role="main">
+            {children}
+          </main>
+        </div>
         <Footer />
       </div>
     </div>

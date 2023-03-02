@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 const WorkDetailCopy = ({
@@ -9,39 +9,25 @@ const WorkDetailCopy = ({
   productionCompany,
   duration,
 }) => (
-  <div className="work-detail__text">
-    <h1 className="work-detail__heading">
-      <span className="work-detail__client">{client}</span>
-      {projectName && (
-        <span className="work-detail__title"> - {projectName}</span>
-      )}
-    </h1>
-    <ul className="work-detail__meta">
-      {director && (
-        <li className="work-detail__meta-item">
-          <strong>Director:</strong> <span>{director}</span>
-        </li>
-      )}
-
-      {agency && (
-        <li className="work-detail__meta-item">
-          <strong>Agency:</strong> <span>{agency}</span>
-        </li>
-      )}
-
+  <Fragment>
+    <div className="work-detail__text">
+      <h1 className="work-detail__heading">
+        {client}
+        {projectName && <Fragment> &ldquo;{projectName}&rdquo;</Fragment>}
+      </h1>
+      <p className="work-detail__meta">
+        {duration && duration} {duration && director && '•'}{' '}
+        {director && <span>Director: {director}</span>}
+      </p>
+    </div>
+    <p className="work-detail__meta">
+      {agency && <span>Agency: {agency}</span>}{' '}
+      {agency && productionCompany && '•'}{' '}
       {productionCompany && (
-        <li className="work-detail__meta-item">
-          <strong>Production Company:</strong> <span>{productionCompany}</span>
-        </li>
+        <span>Production Company: {productionCompany}</span>
       )}
-
-      {duration && (
-        <li className="work-detail__meta-item">
-          <strong>Duration:</strong> <span>{duration}</span>
-        </li>
-      )}
-    </ul>
-  </div>
+    </p>
+  </Fragment>
 );
 
 WorkDetailCopy.propTypes = {

@@ -132,24 +132,20 @@ const ContactPage = ({ data: { allWpPage }, location }) => {
           </div>
 
           <div className="contact__copy">
-            <h1 className="contact__heading">Contact</h1>
+            <h1 className="contact__heading visuallyhidden">Contact</h1>
             <address>
-              {businessAddressLine1}
-              <br />
-              {businessAddressLine2}
-              <br />
+              {businessAddressLine1}, {businessAddressLine2} •{' '}
               <a href={`tel:${businessPhoneNumber.replaceAll('-', '')}`}>
                 {businessPhoneNumber}
               </a>
             </address>
 
             <p>
-              {primaryContactPersonName} - {primaryContactPersonTitle}
-              <br />
+              {primaryContactPersonName} - {primaryContactPersonTitle} •{' '}
               <a href={`mailto:${primaryContactPersonEmail}`}>
                 {primaryContactPersonEmail}
-              </a>
-              <br />
+              </a>{' '}
+              •{' '}
               <a
                 href={`tel:${primaryContactPersonPhoneNumber.replaceAll(
                   '-',
@@ -161,21 +157,28 @@ const ContactPage = ({ data: { allWpPage }, location }) => {
             </p>
 
             <p>
-              {secondaryContactPersonName} - {secondaryContactPersonTitle}
-              <br />
-              <a href={`mailto:${secondaryContactPersonEmail}`}>
-                {secondaryContactPersonEmail}
-              </a>
-              <br />
+              {secondaryContactPersonName} - {secondaryContactPersonTitle}{' '}
+              {secondaryContactPersonEmail && (
+                <Fragment>
+                  •{' '}
+                  <a href={`mailto:${secondaryContactPersonEmail}`}>
+                    {secondaryContactPersonEmail}
+                  </a>
+                </Fragment>
+              )}
               {secondaryContactPersonPhoneNumber && (
-                <a
-                  href={`tel:${secondaryContactPersonPhoneNumber.replaceAll(
-                    '-',
-                    ''
-                  )}`}
-                >
-                  {secondaryContactPersonPhoneNumber}
-                </a>
+                <Fragment>
+                  {' '}
+                  •{' '}
+                  <a
+                    href={`tel:${secondaryContactPersonPhoneNumber.replaceAll(
+                      '-',
+                      ''
+                    )}`}
+                  >
+                    {secondaryContactPersonPhoneNumber}
+                  </a>
+                </Fragment>
               )}
             </p>
           </div>

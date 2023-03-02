@@ -1,11 +1,19 @@
 .contact {
-  font-size: 1.5rem;
+  font-family: $font-light;
+  font-size: 1.125rem;
+  letter-spacing: 0.15em;
   line-height: 1.25;
   padding-bottom: $space-700;
   padding-top: $space-300;
 
   &__map {
     margin-bottom: $space-500;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include mq($M) {
+      width: 95%;
+    }
   }
 
   #map {
@@ -16,6 +24,7 @@
     text-align: center;
 
     p {
+      margin-bottom: $space-400;
       max-width: none;
     }
 
@@ -31,7 +40,7 @@
   }
 
   address {
-    margin-bottom: $space-500;
+    margin-bottom: $space-600;
     text-transform: uppercase;
   }
 }

@@ -4,12 +4,11 @@
 
 .footer {
   align-items: center;
-  border-top: 3px solid $white;
+  border-top: 1px solid $white;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-bottom: $space-400;
-  padding-top: $space-500;
+  padding-bottom: $space-500;
 
   &__logo-wrapper {
     width: 100%;
@@ -19,7 +18,7 @@
     margin-bottom: $space-200;
     margin-left: auto;
     margin-right: auto;
-    max-width: 19rem;
+    max-width: 15rem;
     width: 100%;
 
     &-link {
@@ -33,7 +32,7 @@
 
   address {
     color: $white;
-    font-size: 0.8125rem;
+    font-size: 0.75rem;
     text-align: center;
     text-transform: uppercase;
 
