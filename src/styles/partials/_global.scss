@@ -55,11 +55,6 @@ footer {
     padding-bottom: 2px;
     text-decoration-thickness: 0.05em;
     text-underline-offset: $space-100;
-
-    &:hover,
-    &:active {
-      color: $link-hover-clr;
-    }
   }
 }
 
