@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
-const VideoCard = ({ activeImage, staticImage, client, projectName }) => {
+const VideoCard = ({ activeImage, client, projectName }) => {
   const cardImageActive = getImage(activeImage);
-  const cardImageStatic = getImage(staticImage);
+  // const cardImageStatic = getImage(staticImage);
 
   return (
     <div className="video-card">
@@ -14,11 +14,11 @@ const VideoCard = ({ activeImage, staticImage, client, projectName }) => {
           image={cardImageActive}
           alt={activeImage.altText}
         />
-        <GatsbyImage
+        {/* <GatsbyImage
           className="video-card__image video-card__image--static"
           image={cardImageStatic}
           alt={staticImage?.altText}
-        />
+        /> */}
       </div>
 
       <div className="video-card__content-wrapper">
