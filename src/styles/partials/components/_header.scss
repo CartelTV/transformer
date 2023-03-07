@@ -126,18 +126,35 @@
     font-size: 1rem;
     letter-spacing: 0.15em;
     outline: none;
+    position: relative;
     text-decoration: none;
     text-transform: uppercase;
-    transition: color 0.33s ease-out, text-decoration 0.33s ease-out;
 
     &:focus,
     &:hover {
-      color: $black;
-      text-decoration: underline;
+      &::before {
+        transform: scaleX(1);
+      }
+    }
+
+    &::before {
+      background-color: #fff;
+      bottom: -2px;
+      content: '';
+      display: block;
+      height: 2px;
+      left: 0;
+      position: absolute;
+      transform: scaleX(0);
+      transform-origin: top left;
+      transition: transform 1s ease;
+      width: 100%;
     }
 
     &.active {
-      color: $black;
+      &::before {
+        transform: scaleX(1);
+      }
     }
   }
 }
