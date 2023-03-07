@@ -81,6 +81,7 @@ const Header = ({ location, siteTitle }) => {
                   item.path === location && location.pathname ? menuRef : null
                 }
                 tabIndex={menuIsExpanded ? 0 : -1}
+                activeClassName="active"
               >
                 {item.label}
               </Link>

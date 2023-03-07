@@ -1,7 +1,7 @@
 .reel {
-  margin-bottom: $space-600;
   margin-left: auto;
   margin-right: auto;
+  width: 100%;
 
   @include mq($M) {
     width: 95%;

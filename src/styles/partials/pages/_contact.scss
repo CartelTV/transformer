@@ -3,8 +3,14 @@
   font-size: 1.125rem;
   letter-spacing: 0.15em;
   line-height: 1.25;
+  margin-left: auto;
+  margin-right: auto;
   padding-bottom: $space-700;
   padding-top: $space-300;
+
+  @include mq($M) {
+    width: 95%;
+  }
 
   &__map {
     margin-bottom: $space-500;

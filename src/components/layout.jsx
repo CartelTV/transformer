@@ -13,9 +13,13 @@ const Layout = ({ children, location }) => (
     </a>
     <div className="content-wrapper">
       <div className="container">
-        <div>
+        <div className="container__inner">
           <Header location={location} />
-          <main className="main" id="main" role="main">
+          <main
+            className={`main ${location.pathname === '/' ? 'main--home' : ''}`}
+            id="main"
+            role="main"
+          >
             {children}
           </main>
         </div>
@@ -27,7 +31,9 @@ const Layout = ({ children, location }) => (
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-  location: PropTypes.shape({}),
+  location: PropTypes.shape({
+    pathname: PropTypes.string,
+  }),
 };
 
 Layout.defaultProps = {

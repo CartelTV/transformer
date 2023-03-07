@@ -7,6 +7,17 @@ body {
   width: 100%;
 }
 
+main {
+  align-items: center;
+  display: flex;
+
+  &.main--home {
+    @include mq($M) {
+      flex: 1;
+    }
+  }
+}
+
 strong,
 b {
   font-family: $font-reg;
@@ -148,6 +159,12 @@ td {
 
   @include mq($L) {
     padding: 0;
+  }
+
+  &__inner {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
   }
 }
 
