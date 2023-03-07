@@ -2,9 +2,13 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  overflow: hidden;
   position: relative;
 
   &:hover {
+    .video-card__image-wrapper {
+      transform: scale(1.05);
+    }
     .video-card__image--static {
       opacity: 0;
     }
@@ -27,12 +31,13 @@
     display: grid;
     height: 100%;
     position: relative;
+    transition: transform 1s ease-out;
   }
 
   &__image {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
-    transform: opacity 0.33s ease-out;
+    // transform: opacity 0.33s ease-out;
   }
 
   &__content-wrapper {
@@ -47,6 +52,7 @@
     position: absolute;
     right: 0;
     top: 0;
+    transition: background-color 0.5s ease-out;
 
     &:focus,
     &:hover {

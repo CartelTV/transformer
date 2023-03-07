@@ -23,6 +23,26 @@
           outline-color: $white;
           outline-offset: 4px;
           outline-width: 1px;
+
+          .video-card__image-wrapper {
+            transform: scale(1.05);
+          }
+          .video-card__image--static {
+            opacity: 0;
+          }
+          .video-card__content {
+            opacity: 1;
+          }
+          .video-card__client {
+            animation-name: fadeInDown;
+            animation-duration: 2s;
+            animation-fill-mode: forwards;
+          }
+          .video-card__name {
+            animation-name: fadeInUp;
+            animation-duration: 2s;
+            animation-fill-mode: forwards;
+          }
         }
       }
 
