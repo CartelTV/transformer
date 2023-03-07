@@ -21,14 +21,16 @@ const VideoCard = ({ activeImage, client, projectName }) => {
         /> */}
       </div>
 
-      <div className="video-card__content-wrapper">
-        <p className="video-card__content">
-          <span className="video-card__client">{client}</span>{' '}
-          {projectName && (
-            <span className="video-card__name">{projectName}</span>
-          )}
-        </p>
-      </div>
+      {(client || projectName) && (
+        <div className="video-card__content-wrapper">
+          <p className="video-card__content">
+            <span className="video-card__client">{client}</span>{' '}
+            {projectName && (
+              <span className="video-card__name">{projectName}</span>
+            )}
+          </p>
+        </div>
+      )}
     </div>
   );
 };
@@ -40,11 +42,12 @@ VideoCard.propTypes = {
   staticImage: PropTypes.shape({
     altText: PropTypes.string,
   }).isRequired,
-  client: PropTypes.string.isRequired,
+  client: PropTypes.string,
   projectName: PropTypes.string,
 };
 
 VideoCard.defaultProps = {
+  client: '',
   projectName: '',
 };
 

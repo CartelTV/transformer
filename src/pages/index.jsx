@@ -12,18 +12,23 @@ const IndexPage = ({ data, location }) => {
   return (
     <Layout location={location}>
       <SEO title="Home" />
-      <ul className="project-grid">
-        {homepageData.map((item) => {
+      <ul className="home__grid">
+        {homepageData.map((item, index) => {
           const pageLink = `/work/${item.slug}`;
 
           return (
-            <li className="project-grid__item" key={pageLink}>
+            <li
+              className={`home__grid-item item-${index} fade-out`}
+              style={{
+                animationDelay: `${6 * index}s`,
+                animationDuration: `${homepageData.length * 6}s`,
+              }}
+              key={pageLink}
+            >
               <Link to={pageLink}>
                 <VideoCard
                   staticImage={item.project.staticImage}
                   activeImage={item.project.image}
-                  client={item.project.client}
-                  projectName={item.project.projectName}
                 />
               </Link>
             </li>

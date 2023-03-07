@@ -1,3 +1,29 @@
+@keyframes fadeOut {
+  0% {
+    opacity: 0;
+    -webkit-animation-timing-function: ease-in;
+  }
+  2.5% {
+    opacity: 1;
+    pointer-events: all;
+    -webkit-animation-timing-function: ease-out;
+  }
+  15% {
+    opacity: 1;
+    pointer-events: all;
+  }
+  17.5% {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.fade-out {
+  animation-name: fadeOut;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
 @keyframes fadeInDown {
   from {
     opacity: 0;
