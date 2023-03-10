@@ -20,7 +20,6 @@ const LongFormPage = ({ data, location }) => {
             <li className="project-grid__item" key={pageLink}>
               <Link to={pageLink}>
                 <VideoCard
-                  staticImage={item.project.staticImage}
                   activeImage={item.project.image}
                   client={item.project.client}
                   projectName={item.project.projectName}
@@ -75,18 +74,6 @@ export const query = graphql`
           director
           projectName
           showOnHomepage
-          staticImage {
-            gatsbyImage(
-              breakpoints: [376, 751, 1920]
-              cropFocus: CENTER
-              fit: COVER
-              formats: [AUTO, WEBP, AVIF]
-              layout: FULL_WIDTH
-              placeholder: BLURRED
-              width: 1920
-            )
-            altText
-          }
           image {
             gatsbyImage(
               breakpoints: [376, 751, 1920]

@@ -22,13 +22,9 @@
 
     a {
       &:focus-visible {
-        outline-color: $white;
+        outline-color: $color-grey-1;
         outline-offset: 4px;
         outline-width: 1px;
-
-        .video-card__image--static {
-          opacity: 0;
-        }
 
         .video-card__content {
           opacity: 1;

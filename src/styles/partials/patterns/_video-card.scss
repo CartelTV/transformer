@@ -9,9 +9,6 @@
     .video-card__image-wrapper {
       transform: scale(1.05);
     }
-    .video-card__image--static {
-      opacity: 0;
-    }
     .video-card__content {
       opacity: 1;
     }
@@ -43,12 +40,11 @@
   &__content-wrapper {
     align-items: center;
     bottom: 0;
-    color: #fff;
     display: flex;
     justify-content: center;
     left: 0;
     margin: auto;
-    padding: 0.75rem;
+    padding: 0.5rem;
     position: absolute;
     right: 0;
     top: 0;
@@ -62,7 +58,7 @@
 
   &__content {
     align-items: center;
-    color: $white;
+    color: $color-grey-9;
     display: flex;
     flex-direction: column;
     letter-spacing: 0.075em;
@@ -73,12 +69,8 @@
     transition: opacity 0.33s ease-out;
 
     @include mq($M) {
-      font-size: 1.25rem;
+      font-size: 1rem;
     }
-  }
-
-  &__client {
-    text-transition: uppercase;
   }
 
   &__name {

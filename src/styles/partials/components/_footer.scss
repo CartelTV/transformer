@@ -4,40 +4,14 @@
 
 .footer {
   align-items: center;
-  border-top: 1px solid $white;
+  border-top: 1px solid $color-grey-1;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-bottom: $space-500;
-
-  &__logo-wrapper {
-    width: 100%;
-  }
+  padding-bottom: $space-550;
+  padding-top: $space-400;
 
   &__logo {
-    margin-bottom: $space-200;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 15rem;
-    width: 100%;
-
-    &-link {
-      &:focus-visible {
-        outline-color: $white;
-        outline-offset: 8px;
-        outline-width: 1px;
-      }
-    }
-  }
-
-  address {
-    color: $white;
-    font-size: 0.75rem;
-    text-align: center;
-    text-transform: uppercase;
-
-    a {
-      color: $black;
-    }
+    width: 0.5rem;
   }
 }

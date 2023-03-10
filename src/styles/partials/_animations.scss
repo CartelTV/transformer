@@ -43,11 +43,13 @@
 
 @keyframes fadeInDown {
   from {
+    letter-spacing: 0.1em;
     opacity: 0;
-    transform: translateY(-2rem);
+    transform: translateY(-0.75rem);
   }
 
   to {
+    letter-spacing: 0;
     opacity: 1;
     transform: translateY(0);
   }
@@ -55,17 +57,19 @@
 
 .fade-in-down {
   animation-name: fadeInDown;
-  animation-duration: 0.75s;
+  animation-duration: 0.5s;
   animation-fill-mode: forwards;
 }
 
 @keyframes fadeInUp {
   from {
+    letter-spacing: 0.1em;
     opacity: 0;
-    transform: translateY(2rem);
+    transform: translateY(0.5rem);
   }
 
   to {
+    letter-spacing: 0;
     opacity: 1;
     transform: translateY(0);
   }
@@ -75,4 +79,16 @@
   animation-name: fadeInUp;
   animation-duration: 0.75s;
   animation-fill-mode: forwards;
+}
+
+@keyframes backgroundGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }

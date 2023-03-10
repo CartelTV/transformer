@@ -14,7 +14,6 @@ const ThreeColGrid = ({ videos }) => (
           <li className="three-col-grid__item" key={pageLink}>
             <Link to={pageLink}>
               <VideoCard
-                staticImage={item.node.project.staticImage}
                 activeImage={item.node.project.image}
                 client={item.node.project.client}
                 projectName={item.node.project.projectName}

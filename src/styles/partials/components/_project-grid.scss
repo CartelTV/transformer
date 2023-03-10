@@ -20,15 +20,12 @@
     &__item {
       a {
         &:focus-visible {
-          outline-color: $white;
+          outline-color: $color-grey-1;
           outline-offset: 4px;
           outline-width: 1px;
 
           .video-card__image-wrapper {
             transform: scale(1.05);
-          }
-          .video-card__image--static {
-            opacity: 0;
           }
           .video-card__content {
             opacity: 1;
@@ -53,6 +50,12 @@
 
         .video-card {
           height: 100%;
+
+          &__content {
+            @include mq($M) {
+              font-size: 2rem;
+            }
+          }
         }
       }
       // 6/7 - 2 cols wide and 2 rows tall
@@ -62,6 +65,14 @@
 
         .video-card {
           height: 100%;
+        }
+      }
+
+      &:first-of-type {
+        .video-card__content {
+          @include mq($M) {
+            font-size: 2rem;
+          }
         }
       }
     }

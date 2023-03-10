@@ -1,4 +1,8 @@
 .about {
+  display: flex;
+  flex-direction: column;
+  gap: $space-500;
+
   &__copy {
     p {
       font-family: $font-light;

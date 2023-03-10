@@ -26,10 +26,7 @@ const IndexPage = ({ data, location }) => {
               key={pageLink}
             >
               <Link to={pageLink}>
-                <VideoCard
-                  staticImage={item.project.staticImage}
-                  activeImage={item.project.image}
-                />
+                <VideoCard activeImage={item.project.image} />
               </Link>
             </li>
           );
@@ -76,18 +73,6 @@ export const query = graphql`
           director
           projectName
           showOnHomepage
-          staticImage {
-            gatsbyImage(
-              breakpoints: [376, 751, 1920]
-              cropFocus: CENTER
-              fit: COVER
-              formats: [AUTO, WEBP, AVIF]
-              layout: FULL_WIDTH
-              placeholder: BLURRED
-              width: 1920
-            )
-            altText
-          }
           image {
             gatsbyImage(
               breakpoints: [376, 751, 1920]

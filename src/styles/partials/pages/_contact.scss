@@ -35,10 +35,10 @@
     }
 
     a {
-      color: $white;
+      color: $color-grey-1;
 
       &:focus-visible {
-        outline-color: $white;
+        outline-color: $color-grey-1;
         outline-offset: 4px;
         outline-width: 1px;
       }

@@ -4,7 +4,6 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 const VideoCard = ({ activeImage, client, projectName }) => {
   const cardImageActive = getImage(activeImage);
-  // const cardImageStatic = getImage(staticImage);
 
   return (
     <div className="video-card">
@@ -14,11 +13,6 @@ const VideoCard = ({ activeImage, client, projectName }) => {
           image={cardImageActive}
           alt={activeImage.altText}
         />
-        {/* <GatsbyImage
-          className="video-card__image video-card__image--static"
-          image={cardImageStatic}
-          alt={staticImage?.altText}
-        /> */}
       </div>
 
       {(client || projectName) && (
@@ -37,9 +31,6 @@ const VideoCard = ({ activeImage, client, projectName }) => {
 
 VideoCard.propTypes = {
   activeImage: PropTypes.shape({
-    altText: PropTypes.string,
-  }).isRequired,
-  staticImage: PropTypes.shape({
     altText: PropTypes.string,
   }).isRequired,
   client: PropTypes.string,

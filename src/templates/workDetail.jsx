@@ -36,26 +36,28 @@ const WorkDetailPage = ({ data, location }) => {
   return (
     <Layout location={location}>
       <SEO title={`${client} - ${projectName}`} />
-      <article className="work-detail">
-        <WorkDetailVideo
-          videoIsPlaying={videoIsPlaying}
-          setVideoIsPlaying={setVideoIsPlaying}
-          thumbnail={thumbnail}
-          image={image}
-          videoUrl={videoUrl}
-          client={client}
-          projectName={projectName}
-        />
-        <WorkDetailCopy
-          client={client}
-          projectName={projectName}
-          director={director}
-          agency={agency}
-          productionCompany={productionCompany}
-          duration={duration}
-        />
-      </article>
-      <ThreeColGrid videos={moreVideos} />
+      <div className="work">
+        <article className="work-detail">
+          <WorkDetailVideo
+            videoIsPlaying={videoIsPlaying}
+            setVideoIsPlaying={setVideoIsPlaying}
+            thumbnail={thumbnail}
+            image={image}
+            videoUrl={videoUrl}
+            client={client}
+            projectName={projectName}
+          />
+          <WorkDetailCopy
+            client={client}
+            projectName={projectName}
+            director={director}
+            agency={agency}
+            productionCompany={productionCompany}
+            duration={duration}
+          />
+        </article>
+        <ThreeColGrid videos={moreVideos} />
+      </div>
     </Layout>
   );
 };
@@ -95,18 +97,6 @@ export const query = graphql`
           slug
           project {
             client
-            staticImage {
-              gatsbyImage(
-                breakpoints: [376, 751, 1920]
-                cropFocus: CENTER
-                fit: COVER
-                formats: [AUTO, WEBP, AVIF]
-                layout: FULL_WIDTH
-                placeholder: BLURRED
-                width: 1920
-              )
-              altText
-            }
             image {
               gatsbyImage(
                 breakpoints: [376, 751, 1920]

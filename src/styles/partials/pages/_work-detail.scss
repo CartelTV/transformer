@@ -1,5 +1,5 @@
 .work-detail {
-  border-bottom: 1px solid $white;
+  border-bottom: 1px solid $color-grey-1;
   font-family: $font-light;
   font-size: 1.125rem;
   letter-spacing: 0.15em;
@@ -34,7 +34,7 @@
     transition: opacity 1s ease-out;
 
     &:focus-visible {
-      outline-color: $white;
+      outline-color: $color-grey-1;
       outline-offset: 4px;
       outline-width: 1px;
     }
