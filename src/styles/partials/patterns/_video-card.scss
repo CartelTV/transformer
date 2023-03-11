@@ -35,9 +35,7 @@
   }
 
   &__image {
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
-    // transform: opacity 0.33s ease-out;
+    aspect-ratio: 249/140;
   }
 
   &__content-wrapper {
