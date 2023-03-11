@@ -110,6 +110,7 @@ textarea {
 -------------------------------------------------------------------*/
 .skip-link {
   color: $color-grey-1;
+  outline-color: $black;
   padding: 0.5rem;
   position: absolute;
   right: 100%;
@@ -117,7 +118,7 @@ textarea {
 }
 
 .skip-link:focus {
-  left: calc(50% - 84px);
+  left: calc(50% - 75px);
   right: auto;
 }
 

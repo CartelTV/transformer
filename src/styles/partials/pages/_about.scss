@@ -3,12 +3,22 @@
   flex-direction: column;
   gap: $space-500;
 
+  @include mq($M) {
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+  }
+
   &__copy {
     p {
       font-family: $font-light;
-      font-size: 1.25rem;
-      letter-spacing: 0.15em;
-      max-width: none;
+      font-size: 0.875rem;
+      letter-spacing: 0.1em;
+      max-width: 47.5rem;
+
+      @include mq($M) {
+        font-size: 1rem;
+      }
     }
   }
 }

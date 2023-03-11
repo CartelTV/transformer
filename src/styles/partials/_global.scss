@@ -9,6 +9,7 @@ body {
 main {
   align-items: center;
   display: flex;
+  width: 100%;
 
   &.main--home {
     @include mq($M) {
@@ -156,6 +157,7 @@ td {
   }
 
   &__inner {
+    align-items: center;
     display: flex;
     flex: 1;
     flex-direction: column;
@@ -163,12 +165,9 @@ td {
 }
 
 .content-wrapper {
-  animation: backgroundGradient 15s ease infinite;
-  background: rgb(207, 202, 185);
-  background: linear-gradient(-45deg, #f69e75, #fff9e5, #fcfdb1, #fcffe4);
+  background: $cream;
+  background: linear-gradient(180deg, $cream, 80%, $off-white);
   background-position: top center;
-  background-repeat: no-repeat;
-  background-size: 400% 400%;
   height: 100vh;
   overflow-y: auto;
   padding-left: $space-500;

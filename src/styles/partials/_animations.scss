@@ -45,7 +45,7 @@
   from {
     letter-spacing: 0.1em;
     opacity: 0;
-    transform: translateY(-0.75rem);
+    transform: translateY(-0.25rem);
   }
 
   to {
@@ -65,7 +65,7 @@
   from {
     letter-spacing: 0.1em;
     opacity: 0;
-    transform: translateY(0.5rem);
+    transform: translateY(0.25rem);
   }
 
   to {
@@ -79,16 +79,4 @@
   animation-name: fadeInUp;
   animation-duration: 0.75s;
   animation-fill-mode: forwards;
-}
-
-@keyframes backgroundGradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
 }

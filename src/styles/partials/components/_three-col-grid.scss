@@ -12,6 +12,11 @@
     gap: $space-500;
     margin-bottom: 1.125rem !important;
 
+    @include mq($S) {
+      align-items: center;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
     @include mq($M) {
       grid-template-columns: repeat(3, 1fr);
     }

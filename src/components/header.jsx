@@ -50,7 +50,7 @@ const Header = ({ location, siteTitle }) => {
 
     if (menuIsExpanded && menuRef.current) menuRef.current.focus();
 
-    if (windowWidth > 767) {
+    if (windowWidth > 840) {
       setMenuIsExpanded(false);
       setIsOpen(false);
     }
@@ -69,7 +69,7 @@ const Header = ({ location, siteTitle }) => {
         className={`nav nav--small ${isOpen ? 'is-open delayed-fade-in' : ''}`}
         role="navigation"
         id="nav-list-small"
-        hidden={windowWidth > 767 ? false : !menuIsExpanded}
+        hidden={windowWidth > 840 ? false : !menuIsExpanded}
       >
         <ul className="nav__list">
           {data.allWpMenu.edges[0].node.menuItems.nodes.map((item) => (
@@ -124,7 +124,7 @@ const Header = ({ location, siteTitle }) => {
           className={`nav nav--large ${isOpen ? 'is-open' : ''}`}
           role="navigation"
           id="nav-list"
-          hidden={windowWidth > 767 ? false : !menuIsExpanded}
+          hidden={windowWidth > 840 ? false : !menuIsExpanded}
         >
           <ul className="nav__list">
             {data.allWpMenu.edges[0].node.menuItems.nodes.map((item) => (

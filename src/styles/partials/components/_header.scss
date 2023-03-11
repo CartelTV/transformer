@@ -15,11 +15,14 @@
   z-index: 1;
 
   @include mq($M) {
+    background-color: $cream;
     margin-left: auto;
     margin-right: auto;
     padding-left: 0;
     padding-right: 0;
     padding-top: $space-500;
+    position: sticky;
+    top: 0;
   }
 
   &.is-open {
@@ -123,15 +126,18 @@
   &__link {
     color: $color-grey-1;
     font-family: $font-light;
-    font-size: 1rem;
+    font-size: 0.75rem;
     letter-spacing: 0.15em;
     outline: none;
     position: relative;
     text-decoration: none;
     text-transform: uppercase;
+    transition: letter-spacing 0.67s ease-out;
 
     &:focus,
     &:hover {
+      letter-spacing: 0.25em;
+
       &::before {
         transform: scaleX(1);
       }
@@ -146,7 +152,7 @@
       left: 0;
       position: absolute;
       transform: scaleX(0);
-      transform-origin: top left;
+      transform-origin: top center;
       transition: transform 0.67s ease;
       width: 100%;
     }
