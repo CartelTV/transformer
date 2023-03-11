@@ -57,7 +57,7 @@ module.exports = {
         short_name: `Transformer`,
         start_url: `/`,
         background_color: `#111111`,
-        theme_color: `#f0e5bf`,
+        theme_color: `#d3cfbf`,
         display: `minimal-ui`,
         icon: `src/images/favicon.svg`, // This path is relative to the root of the site.
       },
