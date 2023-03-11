@@ -8,9 +8,10 @@ const SEO = ({ description, lang, meta, title }) => {
     query DefaultSEOQuery {
       site {
         siteMetadata {
-          title
           description
+          siteUrl
           socialImage
+          title
         }
       }
     }
@@ -23,8 +24,11 @@ const SEO = ({ description, lang, meta, title }) => {
       htmlAttributes={{
         lang,
       }}
-      title={title}
-      titleTemplate={`%s | ${data.site.siteMetadata.title}`}
+      title={
+        title
+          ? `${title} | ${data.site.siteMetadata.title}`
+          : data.site.siteMetadata.title
+      }
       meta={[
         {
           name: `description`,
@@ -61,6 +65,10 @@ const SEO = ({ description, lang, meta, title }) => {
         {
           name: `twitter:image`,
           content: data.site.siteMetadata.socialImage,
+        },
+        {
+          name: `twitter:url`,
+          content: data.site.siteMetadata.siteUrl,
         },
       ].concat(meta)}
     />

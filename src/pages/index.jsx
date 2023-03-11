@@ -11,7 +11,7 @@ const IndexPage = ({ data, location }) => {
 
   return (
     <Layout location={location}>
-      <SEO title="Home" />
+      <SEO title="" />
       <ul className="home__grid">
         {homepageData.map((item, index) => {
           const pageLink = `/work/${item.slug}`;
