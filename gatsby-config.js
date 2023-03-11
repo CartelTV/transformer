@@ -6,7 +6,6 @@ module.exports = {
     socialImage: `/social-image.jpg`,
   },
   plugins: [
-    `gatsby-plugin-remove-trailing-slashes`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-sitemap`,

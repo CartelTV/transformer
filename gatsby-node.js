@@ -4,7 +4,7 @@ const { slash } = require(`gatsby-core-utils`);
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions;
 
-  // Editor Detail pages
+  // Project Detail pages
   const workDetailResult = await graphql(`
     {
       allWpProject(limit: 200) {
