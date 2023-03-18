@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { graphql, Link, useStaticQuery } from 'gatsby';
 import { useWindowSize } from '../hooks/useWindowSize';
 
-import transformerLogoDark from '../images/transformer-logo-dark.svg';
+import transformerLogo from '../images/transformer-logo.png';
 import menuIcon from '../images/icon-menu.svg';
 
 const Header = ({ location, siteTitle }) => {
@@ -112,7 +112,7 @@ const Header = ({ location, siteTitle }) => {
             <h1 className="visuallyhidden">{siteTitle}</h1>
             <img
               className="header__logo"
-              src={transformerLogoDark}
+              src={transformerLogo}
               alt="Transformer logo"
               height="55"
               width="400"

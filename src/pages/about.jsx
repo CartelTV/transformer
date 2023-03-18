@@ -1,24 +1,21 @@
+/* eslint-disable jsx-a11y/media-has-caption */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 
+import video from '../images/about-video.mp4';
+
 const AboutPage = ({ data: { allWpPage }, location }) => {
-  const { aboutImage, aboutCopy } = allWpPage.edges[0].node.aboutPage;
-  const image = getImage(aboutImage);
+  const { aboutCopy } = allWpPage.edges[0].node.aboutPage;
 
   return (
     <Layout location={location}>
       <SEO title="About" />
       <article className="about">
-        <GatsbyImage
-          className="video-card__image video-card__image--active"
-          image={image}
-          alt={aboutImage.altText}
-        />
+        <video autoPlay muted playsInline loop src={video} />
         <div
           className="about__copy"
           dangerouslySetInnerHTML={{ __html: aboutCopy }}
@@ -62,18 +59,6 @@ export const query = graphql`
         node {
           aboutPage {
             aboutCopy
-            aboutImage {
-              gatsbyImage(
-                breakpoints: [376, 751, 1920]
-                cropFocus: CENTER
-                fit: FILL
-                formats: [AUTO, WEBP, AVIF]
-                layout: FULL_WIDTH
-                placeholder: BLURRED
-                width: 1920
-              )
-              altText
-            }
           }
         }
       }
