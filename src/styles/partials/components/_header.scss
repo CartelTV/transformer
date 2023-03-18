@@ -15,7 +15,8 @@
   z-index: 1;
 
   @include mq($M) {
-    background-color: $cream;
+    background-color: $off-white;
+    background: linear-gradient(180deg, $off-white, #f3f2f0);
     margin-left: auto;
     margin-right: auto;
     padding-left: 0;
