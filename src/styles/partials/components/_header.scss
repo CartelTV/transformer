@@ -55,6 +55,7 @@
 
   &__logo-wrapper {
     border-top: 1px solid $color-grey-1;
+    max-width: 19.375rem;
     padding-top: $space-500;
     width: 100%;
 
@@ -66,12 +67,28 @@
   }
 
   &__logo {
+    grid-area: 1 / 1 /2 / 2;
     margin-left: auto;
     margin-right: auto;
     max-width: 19rem;
+    transform: rotate(0) scale(1);
+    transition: transform 0.33s ease-out;
     width: 100%;
 
     &-link {
+      display: grid;
+      grid-template-columns: 1fr;
+
+      &:hover {
+        .header__logo--fuzzy {
+          transform: rotate(-0.67deg);
+        }
+
+        .header__logo--fuzzy-exp {
+          transform: scale(1.02);
+        }
+      }
+
       &:focus-visible {
         outline-color: $color-grey-1;
         outline-offset: 12px;
