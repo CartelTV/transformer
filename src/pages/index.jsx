@@ -20,8 +20,8 @@ const IndexPage = ({ data, location }) => {
             <li
               className={`home__grid-item item-${index} fade-out`}
               style={{
-                animationDelay: `${6 * index}s`,
-                animationDuration: `${homepageData.length * 6}s`,
+                animationDelay: `${3 * index}s`,
+                animationDuration: `${homepageData.length * 3}s`,
               }}
               key={pageLink}
             >
