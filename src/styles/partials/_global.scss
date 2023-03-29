@@ -2,6 +2,8 @@
 // ==== GLOBAL ELEMENTS
 // ===========================================================================
 body {
+  background-color: $color-grey-1;
+  color: $color-grey-9;
   font-family: $font-reg;
   width: 100%;
 }
@@ -162,14 +164,4 @@ td {
     flex: 1;
     flex-direction: column;
   }
-}
-
-.content-wrapper {
-  background: $cream;
-  background: linear-gradient(180deg, $off-white, $cream);
-  background-position: top center;
-  height: 100vh;
-  overflow-y: auto;
-  padding-left: $space-500;
-  padding-right: $space-500;
 }

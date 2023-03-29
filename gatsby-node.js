@@ -40,4 +40,39 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       },
     });
   });
+
+  // Reel page
+  const reelPageResult = await graphql(`
+    {
+      allWpReel {
+        nodes {
+          id
+          slug
+        }
+      }
+    }
+  `);
+
+  if (reelPageResult.errors) {
+    reporter.error(
+      'There was an error fetching posts',
+      workDetailResult.errors
+    );
+  }
+
+  const { allWpReel } = reelPageResult.data;
+
+  allWpReel.nodes.forEach((page) => {
+    createPage({
+      // will be the url for the page
+      path: `work/${page.slug}`,
+      // specify the component template of your choice
+      component: slash(workDetailTemplate),
+      // In the ^template's GraphQL query, 'id' will be available
+      // as a GraphQL variable to query for this page's data.
+      context: {
+        id: page.id,
+      },
+    });
+  });
 };

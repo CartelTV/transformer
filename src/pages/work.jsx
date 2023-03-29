@@ -6,14 +6,25 @@ import Layout from '../components/layout';
 import SEO from '../components/seo';
 import VideoCard from '../components/patterns/videoCard';
 
-const MusicVideosPage = ({ data, location }) => {
-  const pageData = data.allWpProject.nodes;
+const WorkPage = ({ data, location }) => {
+  const reelData = data.allWpReel.nodes[0];
+  console.log('reelData:', reelData);
+  const projectData = data.allWpProject.nodes;
 
   return (
     <Layout location={location}>
-      <SEO title="Music Videos" />
+      <SEO title="Work" />
       <ul className="project-grid">
-        {pageData.map((item) => {
+        <li className="project-grid__item">
+          <Link to={`/work/${reelData.slug}`}>
+            <VideoCard
+              activeImage={reelData.reel.reelImage}
+              projectName={reelData.reel.reelTitle}
+            />
+          </Link>
+        </li>
+
+        {projectData.map((item) => {
           const pageLink = `/work/${item.slug}`;
 
           return (
@@ -33,8 +44,20 @@ const MusicVideosPage = ({ data, location }) => {
   );
 };
 
-MusicVideosPage.propTypes = {
+WorkPage.propTypes = {
   data: PropTypes.shape({
+    allWpReel: PropTypes.shape({
+      nodes: PropTypes.arrayOf(
+        PropTypes.shape({
+          slug: PropTypes.string,
+          reel: PropTypes.shape({
+            videoUrl: PropTypes.string,
+            reelTitle: PropTypes.string,
+            reelImage: PropTypes.shape({}),
+          }),
+        })
+      ),
+    }),
     allWpProject: PropTypes.shape({
       nodes: PropTypes.arrayOf(
         PropTypes.shape({
@@ -53,18 +76,36 @@ MusicVideosPage.propTypes = {
   location: PropTypes.shape({}),
 };
 
-MusicVideosPage.defaultProps = {
+WorkPage.defaultProps = {
   location: {},
 };
 
-export default MusicVideosPage;
+export default WorkPage;
 
 export const query = graphql`
   query {
-    allWpProject(
-      filter: { project: { category: { eq: "Music Videos" } } }
-      sort: { project: { categoryOrder: ASC } }
-    ) {
+    allWpReel {
+      nodes {
+        slug
+        reel {
+          videoUrl
+          reelTitle
+          reelImage {
+            gatsbyImage(
+              breakpoints: [376, 751, 1920]
+              cropFocus: CENTER
+              fit: FILL
+              formats: [AUTO, WEBP, AVIF]
+              layout: FULL_WIDTH
+              placeholder: BLURRED
+              width: 1920
+            )
+            altText
+          }
+        }
+      }
+    }
+    allWpProject(sort: { project: { categoryOrder: ASC } }) {
       nodes {
         slug
         project {

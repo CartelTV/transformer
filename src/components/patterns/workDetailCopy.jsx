@@ -31,7 +31,7 @@ const WorkDetailCopy = ({
 );
 
 WorkDetailCopy.propTypes = {
-  client: PropTypes.string.isRequired,
+  client: PropTypes.string,
   projectName: PropTypes.string,
   director: PropTypes.string,
   agency: PropTypes.string,
@@ -40,6 +40,7 @@ WorkDetailCopy.propTypes = {
 };
 
 WorkDetailCopy.defaultProps = {
+  client: '',
   projectName: '',
   director: '',
   agency: '',

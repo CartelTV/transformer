@@ -11,20 +11,18 @@ const Layout = ({ children, location }) => (
     <a className="skip-link" href="#main">
       skip to main content
     </a>
-    <div className="content-wrapper">
-      <div className="container">
-        <div className="container__inner">
-          <Header location={location} />
-          <main
-            className={`main ${location.pathname === '/' ? 'main--home' : ''}`}
-            id="main"
-            role="main"
-          >
-            {children}
-          </main>
-        </div>
-        <Footer />
+    <div className="container">
+      <div className="container__inner">
+        <Header location={location} />
+        <main
+          className={`main ${location.pathname === '/' ? 'main--home' : ''}`}
+          id="main"
+          role="main"
+        >
+          {children}
+        </main>
       </div>
+      <Footer />
     </div>
   </Fragment>
 );

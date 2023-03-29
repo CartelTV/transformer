@@ -10,37 +10,38 @@ const WorkDetailVideo = ({
   videoUrl,
   client,
   projectName,
-}) => (
-  <div className="work-detail__video">
-    <button
-      className={`work-detail__thumbnail-button ${
-        videoIsPlaying ? 'is-playing' : ''
-      }`}
-      type="button"
-      onClick={() => setVideoIsPlaying(true)}
-      aria-label="play video"
-    >
-      <GatsbyImage
-        image={thumbnail}
-        alt={image.altText}
-        placeholder="blurred"
-        layout="constrained"
-        loading="eager"
-      />
-    </button>
-    {videoIsPlaying && (
-      <div className="work-detail__video-wrapper iframe-container iframe-container-16x9">
-        <iframe
-          src={videoUrl}
-          title={`${client} - ${projectName}`}
-          width="1920"
-          height="1080"
-          allowFullScreen
+}) =>
+  console.log('thumbnail:', thumbnail) || (
+    <div className="work-detail__video">
+      <button
+        className={`work-detail__thumbnail-button ${
+          videoIsPlaying ? 'is-playing' : ''
+        }`}
+        type="button"
+        onClick={() => setVideoIsPlaying(true)}
+        aria-label="play video"
+      >
+        <GatsbyImage
+          image={thumbnail}
+          alt={image.altText}
+          placeholder="blurred"
+          layout="constrained"
+          loading="eager"
         />
-      </div>
-    )}
-  </div>
-);
+      </button>
+      {videoIsPlaying && (
+        <div className="work-detail__video-wrapper iframe-container iframe-container-16x9">
+          <iframe
+            src={videoUrl}
+            title={`${client} - ${projectName}`}
+            width="1920"
+            height="1080"
+            allowFullScreen
+          />
+        </div>
+      )}
+    </div>
+  );
 
 WorkDetailVideo.propTypes = {
   videoIsPlaying: PropTypes.bool.isRequired,
@@ -50,11 +51,12 @@ WorkDetailVideo.propTypes = {
     altText: PropTypes.string,
   }).isRequired,
   videoUrl: PropTypes.string.isRequired,
-  client: PropTypes.string.isRequired,
+  client: PropTypes.string,
   projectName: PropTypes.string,
 };
 
 WorkDetailVideo.defaultProps = {
+  client: '',
   projectName: '',
 };
 
