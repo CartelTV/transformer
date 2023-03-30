@@ -14,7 +14,6 @@ const ContactPage = ({ data: { allWpPage }, location }) => {
     infoPage: {
       businessAddressLine1,
       businessAddressLine2,
-      businessPhoneNumber,
       primaryContactPersonEmail,
       primaryContactPersonName,
       primaryContactPersonPhoneNumber,
@@ -134,10 +133,7 @@ const ContactPage = ({ data: { allWpPage }, location }) => {
           <div className="contact__copy">
             <h1 className="contact__heading visuallyhidden">Contact</h1>
             <address>
-              {businessAddressLine1}, {businessAddressLine2} •{' '}
-              <a href={`tel:${businessPhoneNumber.replaceAll('-', '')}`}>
-                {businessPhoneNumber}
-              </a>
+              {businessAddressLine1}, {businessAddressLine2}
             </address>
 
             <p>
@@ -196,7 +192,6 @@ export const query = graphql`
           infoPage {
             businessAddressLine1
             businessAddressLine2
-            businessPhoneNumber
             primaryContactPersonEmail
             primaryContactPersonName
             primaryContactPersonPhoneNumber
@@ -221,7 +216,6 @@ ContactPage.propTypes = {
             infoPage: PropTypes.shape({
               businessAddressLine1: PropTypes.string,
               businessAddressLine2: PropTypes.string,
-              businessPhoneNumber: PropTypes.string,
               primaryContactPersonEmail: PropTypes.string,
               primaryContactPersonName: PropTypes.string,
               primaryContactPersonPhoneNumber: PropTypes.string,
