@@ -1,6 +1,6 @@
 const NotFoundPage = () => {
   if (typeof window !== 'undefined') {
-    window.location = '/';
+    window.location = '/work';
   }
 
   return null;

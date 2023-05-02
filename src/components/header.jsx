@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { graphql, Link, useStaticQuery } from 'gatsby';
 import { useWindowSize } from '../hooks/useWindowSize';
 
-import transformerLogo from '../images/transformer-logo.svg';
+import transformerLogoVideo from '../images/transformer-logo-video.mp4';
 import menuIcon from '../images/icon-menu.svg';
 
 const Header = ({ location, siteTitle }) => {
@@ -108,15 +108,9 @@ const Header = ({ location, siteTitle }) => {
         </button>
 
         <div className="header__logo-wrapper">
-          <Link className="header__logo-link" to="/">
+          <Link className="header__logo-link" to="/work">
             <h1 className="visuallyhidden">{siteTitle}</h1>
-            <img
-              className="header__logo"
-              src={transformerLogo}
-              alt="Transformer logo"
-              height="43"
-              width="300"
-            />
+            <video autoPlay muted playsInline src={transformerLogoVideo} />
           </Link>
         </div>
 
