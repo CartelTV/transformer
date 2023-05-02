@@ -26,7 +26,7 @@
   }
 
   &.is-open {
-    margin-top: 272px;
+    margin-top: 126px;
   }
 
   &__menu-button {
@@ -88,7 +88,7 @@
     position: absolute;
     top: $space-300;
     transition: max-height 0.33s ease-out 0.33s, opacity 0.33s ease-out;
-    width: calc(93% - 3rem);
+    width: 310px;
 
     @include mq($M) {
       display: none;
