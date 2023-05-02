@@ -66,12 +66,9 @@
   }
 
   &__logo {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 19rem;
-    transform: rotate(0) scale(1);
-    transition: transform 0.33s ease-out;
-    width: 100%;
+    &-video {
+      aspect-ratio: 310 / 56;
+    }
 
     &-link {
       &:focus-visible {

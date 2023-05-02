@@ -110,7 +110,13 @@ const Header = ({ location, siteTitle }) => {
         <div className="header__logo-wrapper">
           <Link className="header__logo-link" to="/work">
             <h1 className="visuallyhidden">{siteTitle}</h1>
-            <video autoPlay muted playsInline src={transformerLogoVideo} />
+            <video
+              className="header__logo-video"
+              autoPlay
+              muted
+              playsInline
+              src={transformerLogoVideo}
+            />
           </Link>
         </div>
 
