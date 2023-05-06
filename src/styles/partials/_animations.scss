@@ -1,4 +1,4 @@
-@keyframes delayedFadeIn {
+@keyframes fadeIn {
   from {
     opacity: 0;
   }
@@ -8,10 +8,17 @@
   }
 }
 
-.delayed-fade-in {
-  animation-name: delayedFadeIn;
+.fade-in {
+  animation-name: fadeIn;
   animation-duration: 0.33s;
   animation-delay: 0.2s;
+  animation-fill-mode: forwards;
+}
+
+.delayed-fade-in {
+  animation-name: fadeIn;
+  animation-duration: 3s;
+  animation-delay: 1.5s;
   animation-fill-mode: forwards;
 }
 

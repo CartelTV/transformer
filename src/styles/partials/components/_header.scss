@@ -164,3 +164,11 @@
     }
   }
 }
+
+body:has(.main--home) {
+  .nav--large {
+    @include mq($M) {
+      opacity: 0;
+    }
+  }
+}

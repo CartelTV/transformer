@@ -15,7 +15,9 @@ const Layout = ({ children, location }) => (
       <div className="container__inner">
         <Header location={location} />
         <main
-          className={`main ${location.pathname === '/' ? 'main--home' : ''}`}
+          className={`main ${
+            location.pathname === '/work/' ? 'main--home delayed-fade-in' : ''
+          }`}
           id="main"
           role="main"
         >

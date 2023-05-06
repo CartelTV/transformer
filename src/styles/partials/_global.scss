@@ -2,7 +2,7 @@
 // ==== GLOBAL ELEMENTS
 // ===========================================================================
 body {
-  background-color: $color-grey-1;
+  background-color: $bg-clr;
   color: $color-grey-9;
   font-family: $font-reg;
   width: 100%;
@@ -14,6 +14,8 @@ main {
   width: 100%;
 
   &.main--home {
+    opacity: 0;
+
     @include mq($M) {
       flex: 1;
     }

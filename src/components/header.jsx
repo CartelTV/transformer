@@ -66,7 +66,7 @@ const Header = ({ location, siteTitle }) => {
   return (
     <Fragment>
       <nav
-        className={`nav nav--small ${isOpen ? 'is-open delayed-fade-in' : ''}`}
+        className={`nav nav--small ${isOpen ? 'is-open fade-in' : ''}`}
         role="navigation"
         id="nav-list-small"
         hidden={windowWidth > 840 ? false : !menuIsExpanded}
@@ -121,7 +121,9 @@ const Header = ({ location, siteTitle }) => {
         </div>
 
         <nav
-          className={`nav nav--large ${isOpen ? 'is-open' : ''}`}
+          className={`nav nav--large ${isOpen ? 'is-open' : ''} ${
+            location.pathname === '/work/' ? 'delayed-fade-in' : ''
+          }`}
           role="navigation"
           id="nav-list"
           hidden={windowWidth > 840 ? false : !menuIsExpanded}
