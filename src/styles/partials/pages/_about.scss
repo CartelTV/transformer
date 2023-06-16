@@ -9,17 +9,23 @@
     width: 95%;
   }
 
+  video {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 33.75rem;
+  }
+
   &__copy {
     margin-bottom: $space-500;
 
     p {
       font-family: $font-light;
-      font-size: 0.875rem;
+      font-size: 1rem;
       letter-spacing: 0.1em;
       max-width: 47.5rem;
 
       @include mq($M) {
-        font-size: 1rem;
+        font-size: 1.0625rem;
       }
     }
   }
