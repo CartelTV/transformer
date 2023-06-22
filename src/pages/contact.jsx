@@ -1,7 +1,6 @@
 /* eslint-disable no-new */
 import React, { Fragment, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 
 import Layout from '../components/layout';
@@ -115,72 +114,59 @@ const ContactPage = ({ data: { allWpPage }, location }) => {
     }
   }, []);
   return (
-    <Fragment>
-      <Helmet>
-        <script
-          async
-          defer
-          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAt8P10q1vokG0xnBf5O5pZEKp3ctyWFDw&callback=initMap"
-        />
-      </Helmet>
-      <Layout location={location}>
-        <SEO title="Info" />
-        <article className="contact">
-          <div className="contact__map">
-            <div id="map" />
-          </div>
+    <Layout location={location}>
+      <SEO title="Info" />
+      <article className="contact">
+        <div className="contact__copy">
+          <h1 className="contact__heading visuallyhidden">Contact</h1>
+          <address>
+            {businessAddressLine1}, {businessAddressLine2}
+          </address>
 
-          <div className="contact__copy">
-            <h1 className="contact__heading visuallyhidden">Contact</h1>
-            <address>
-              {businessAddressLine1}, {businessAddressLine2}
-            </address>
+          <p>
+            {primaryContactPersonName} - {primaryContactPersonTitle} •{' '}
+            <a href={`mailto:${primaryContactPersonEmail}`}>
+              {primaryContactPersonEmail}
+            </a>{' '}
+            •{' '}
+            <a
+              href={`tel:${primaryContactPersonPhoneNumber.replaceAll(
+                '-',
+                ''
+              )}`}
+            >
+              {primaryContactPersonPhoneNumber}
+            </a>
+          </p>
 
-            <p>
-              {primaryContactPersonName} - {primaryContactPersonTitle} •{' '}
-              <a href={`mailto:${primaryContactPersonEmail}`}>
-                {primaryContactPersonEmail}
-              </a>{' '}
-              •{' '}
-              <a
-                href={`tel:${primaryContactPersonPhoneNumber.replaceAll(
-                  '-',
-                  ''
-                )}`}
-              >
-                {primaryContactPersonPhoneNumber}
-              </a>
-            </p>
-
-            <p>
-              {secondaryContactPersonName} - {secondaryContactPersonTitle}{' '}
-              {secondaryContactPersonEmail && (
-                <Fragment>
-                  •{' '}
-                  <a href={`mailto:${secondaryContactPersonEmail}`}>
-                    {secondaryContactPersonEmail}
-                  </a>
-                </Fragment>
-              )}
-              {secondaryContactPersonPhoneNumber && (
-                <Fragment>
-                  {' '}
-                  •{' '}
-                  <a
-                    href={`tel:${secondaryContactPersonPhoneNumber.replaceAll(
-                      '-',
-                      ''
-                    )}`}
-                  >
-                    {secondaryContactPersonPhoneNumber}
-                  </a>
-                </Fragment>
-              )}
-            </p>
-          </div>
-        </article>
-      </Layout>
-    </Fragment>
+          <p>
+            {secondaryContactPersonName} - {secondaryContactPersonTitle}{' '}
+            {secondaryContactPersonEmail && (
+              <Fragment>
+                •{' '}
+                <a href={`mailto:${secondaryContactPersonEmail}`}>
+                  {secondaryContactPersonEmail}
+                </a>
+              </Fragment>
+            )}
+            {secondaryContactPersonPhoneNumber && (
+              <Fragment>
+                {' '}
+                •{' '}
+                <a
+                  href={`tel:${secondaryContactPersonPhoneNumber.replaceAll(
+                    '-',
+                    ''
+                  )}`}
+                >
+                  {secondaryContactPersonPhoneNumber}
+                </a>
+              </Fragment>
+            )}
+          </p>
+        </div>
+      </article>
+    </Layout>
   );
 };
 

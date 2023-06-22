@@ -11,16 +11,6 @@
     font-size: 1rem;
   }
 
-  &__map {
-    margin-bottom: $space-300;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  #map {
-    aspect-ratio: 555/312;
-  }
-
   &__copy {
     p {
       margin-bottom: $space-400;
