@@ -4,12 +4,18 @@
 
 .footer {
   align-items: center;
-  border-top: 1px solid $color-grey-1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding-bottom: $space-550;
   padding-top: $space-400;
+
+  address {
+    font-family: $font-light;
+    margin-bottom: $space-400;
+    text-align: center;
+    text-transform: uppercase;
+  }
 
   &__logo {
     width: 0.5rem;

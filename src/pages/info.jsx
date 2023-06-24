@@ -12,8 +12,6 @@ import video from '../images/info-video.mp4';
 const InfoPage = ({ data: { allWpPage }, location }) => {
   const {
     infoCopy,
-    infoAddressLine1,
-    infoAddressLine2,
     infoPrimaryContactPersonEmail,
     infoPrimaryContactPersonName,
     infoPrimaryContactPersonPhoneNumber,
@@ -33,10 +31,6 @@ const InfoPage = ({ data: { allWpPage }, location }) => {
 
         <section className="contact">
           <div className="contact__copy">
-            <address>
-              {infoAddressLine1}, {infoAddressLine2}
-            </address>
-
             <p>
               {infoPrimaryContactPersonName} - {infoPrimaryContactPersonTitle} •{' '}
               <a href={`mailto:${infoPrimaryContactPersonEmail}`}>
@@ -126,8 +120,6 @@ export const query = graphql`
         node {
           infoPage {
             infoCopy
-            infoAddressLine1
-            infoAddressLine2
             infoPrimaryContactPersonEmail
             infoPrimaryContactPersonName
             infoPrimaryContactPersonPhoneNumber

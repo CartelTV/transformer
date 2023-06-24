@@ -24,7 +24,7 @@ const Layout = ({ children, location }) => (
           {children}
         </main>
       </div>
-      <Footer />
+      <Footer location={location} />
     </div>
   </Fragment>
 );
