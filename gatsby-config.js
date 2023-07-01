@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Transformer`,
     description: `Transformer is a high-end visual effects boutique that is based in Santa Monica, CA.`,
-    siteUrl: `https://mikeriley.dev`,
+    siteUrl: `http://transformer.tv/`,
     socialImage: `/social-image.jpg`,
   },
   plugins: [
@@ -15,7 +15,7 @@ module.exports = {
     {
       resolve: 'gatsby-source-wordpress',
       options: {
-        url: 'http://54.187.0.234/graphql/',
+        url: 'http://admin.transformer.tv/graphql/',
         schema: {
           requestConcurrency: 10,
           timeout: 90000,
