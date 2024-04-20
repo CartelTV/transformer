@@ -8,7 +8,6 @@ import VideoCard from '../components/patterns/videoCard';
 
 const WorkPage = ({ data, location }) => {
   const reelData = data.allWpReel.nodes[0];
-  console.log('reelData:', reelData);
   const projectData = data.allWpProject.nodes;
 
   return (
@@ -24,7 +23,7 @@ const WorkPage = ({ data, location }) => {
           </Link>
         </li>
 
-        {projectData.map((item) => {
+        {projectData.reverse().map((item) => {
           const pageLink = `/work/${item.slug}`;
 
           return (
