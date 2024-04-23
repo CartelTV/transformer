@@ -23,21 +23,26 @@ const WorkPage = ({ data, location }) => {
           </Link>
         </li>
 
-        {projectData.reverse().map((item) => {
-          const pageLink = `/work/${item.slug}`;
+        {/* Sort by categoryOrder and reverse the order so it is descending. */}
+        {/* Projects without a categoryOrder number will appear first by date created. */}
+        {projectData
+          .sort((a, b) => a.categoryOrder - b.categoryOrder)
+          .toReversed()
+          .map((item) => {
+            const pageLink = `/work/${item.slug}`;
 
-          return (
-            <li className="project-grid__item" key={pageLink}>
-              <Link to={pageLink}>
-                <VideoCard
-                  activeImage={item.project.image}
-                  client={item.project.client}
-                  projectName={item.project.projectName}
-                />
-              </Link>
-            </li>
-          );
-        })}
+            return (
+              <li className="project-grid__item" key={pageLink}>
+                <Link to={pageLink}>
+                  <VideoCard
+                    activeImage={item.project.image}
+                    client={item.project.client}
+                    projectName={item.project.projectName}
+                  />
+                </Link>
+              </li>
+            );
+          })}
       </ul>
     </Layout>
   );
