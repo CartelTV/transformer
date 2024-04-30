@@ -10,7 +10,6 @@ import WorkDetailCopy from '../components/patterns/workDetailCopy';
 import ThreeColGrid from '../components/patterns/threeColGrid';
 
 const WorkDetailPage = ({ data, location }) => {
-  console.log('data:', data);
   const [videoIsPlaying, setVideoIsPlaying] = useState(false);
 
   const { reelDetail, videoDetail, allVideos } = data;

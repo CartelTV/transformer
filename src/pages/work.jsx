@@ -26,7 +26,6 @@ const WorkPage = ({ data, location }) => {
         {/* Sort by categoryOrder and reverse the order so it is descending. */}
         {/* Projects without a categoryOrder number will appear first by date created. */}
         {projectData.map((item) => {
-          console.log('item:', item);
           const pageLink = `/work/${item.slug}`;
 
           return (
